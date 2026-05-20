@@ -15,6 +15,7 @@ export default function ServicesSection() {
       cooldown: "Instant",
       skills: ["Bikin Web Keren", "Aplikasi Mobile", "Sihir Database", "API Gercep"],
       colorTheme: "green" as const,
+      href: "/layanan/suhu-software",
     },
     {
       classNameTitle: "Ksatria Hardware",
@@ -26,6 +27,7 @@ export default function ServicesSection() {
       cooldown: "Medium",
       skills: ["Rakit PC Estetik", "Benerin Laptop Sekarat", "Instal Ulang Anti-Ribet", "Bikin Adem PC"],
       colorTheme: "blue" as const,
+      href: "/layanan/ksatria-hardware",
     },
     {
       classNameTitle: "Suhu Curhat IT",
@@ -37,6 +39,7 @@ export default function ServicesSection() {
       cooldown: "Long",
       skills: ["Arsitektur Cloud", "Buff Strategi IT", "Audit Sistem Aman", "Solusi Anti-Boncos"],
       colorTheme: "amber" as const,
+      href: "/layanan/suhu-curhat-it",
     },
   ];
 
