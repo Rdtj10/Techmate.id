@@ -120,25 +120,37 @@ export default function PortfolioCard({
       whileHover={{ y: -4, x: -2 }}
       className={`relative w-full h-full bg-card border-2 ${theme.border} ${theme.glow} ${theme.glowHover} transition-all duration-200 rounded-none cursor-pointer group overflow-hidden flex flex-col`}
     >
-      <div className={`absolute top-[-2px] left-[-2px] w-1.5 h-1.5 bg-background z-10`} />
-      <div className={`absolute top-[-2px] right-[-2px] w-1.5 h-1.5 bg-background z-10`} />
-      <div className={`absolute bottom-[-2px] left-[-2px] w-1.5 h-1.5 bg-background z-10`} />
-      <div className={`absolute bottom-[-2px] right-[-2px] w-1.5 h-1.5 bg-background z-10`} />
+      <div
+        className={`absolute top-[-2px] left-[-2px] w-1.5 h-1.5 bg-background z-10`}
+      />
+      <div
+        className={`absolute top-[-2px] right-[-2px] w-1.5 h-1.5 bg-background z-10`}
+      />
+      <div
+        className={`absolute bottom-[-2px] left-[-2px] w-1.5 h-1.5 bg-background z-10`}
+      />
+      <div
+        className={`absolute bottom-[-2px] right-[-2px] w-1.5 h-1.5 bg-background z-10`}
+      />
 
       <div
-        className={`absolute inset-0 opacity-30 bg-gradient-to-br ${theme.grid} to-transparent pointer-events-none`}
+        className={`absolute inset-0 opacity-30 bg-linear-to-br ${theme.grid} to-transparent pointer-events-none`}
         style={{
           backgroundImage: `linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)`,
           backgroundSize: "20px 20px",
         }}
       />
 
-      <div className={`px-4 py-2.5 border-b-2 ${theme.border} flex items-center justify-between gap-2 bg-background/40`}>
-        <span className={`font-[family-name:var(--font-press-start-2p)] text-[7px] ${theme.text} tracking-wider uppercase`}>
+      <div
+        className={`px-4 py-2.5 border-b-2 ${theme.border} flex items-center justify-between gap-2 bg-background/40`}
+      >
+        <span
+          className={`font-(family-name:--font-press-start-2p) text-[7px] ${theme.text} tracking-wider uppercase`}
+        >
           {categoryLabel[item.category]}
         </span>
         <span
-          className={`flex items-center gap-1 px-2 py-0.5 border text-[7px] font-[family-name:var(--font-press-start-2p)] font-bold rounded-none ${status.className}`}
+          className={`flex items-center gap-1 px-2 py-0.5 border text-[7px] font-(family-name:--font-press-start-2p) font-bold rounded-none ${status.className}`}
         >
           {status.icon}
           {status.label}
@@ -148,13 +160,15 @@ export default function PortfolioCard({
       <div className="p-4 flex flex-col flex-1 gap-3">
         <div className="flex items-start justify-between gap-2">
           <div>
-            <h3 className="font-[family-name:var(--font-press-start-2p)] text-[10px] md:text-xs font-bold text-foreground uppercase leading-relaxed">
+            <h3 className="font-(family-name:--font-press-start-2p) text-[10px] md:text-xs font-bold text-foreground uppercase leading-relaxed">
               {item.title}
             </h3>
-            <p className="text-[10px] text-muted-foreground mt-0.5">{item.subtitle}</p>
+            <p className="text-[10px] text-muted-foreground mt-0.5">
+              {item.subtitle}
+            </p>
           </div>
           <span
-            className={`shrink-0 w-8 h-8 flex items-center justify-center border-2 font-[family-name:var(--font-press-start-2p)] text-xs font-bold ${theme.badge} ${theme.border}`}
+            className={`shrink-0 w-8 h-8 flex items-center justify-center border-2 font-(family-name:--font-press-start-2p) text-xs font-bold ${theme.badge} ${theme.border}`}
           >
             {item.rank}
           </span>
@@ -176,14 +190,16 @@ export default function PortfolioCard({
         </div>
 
         <div className="flex items-center justify-between pt-2 border-t border-border">
-          <span className="text-[9px] font-[family-name:var(--font-press-start-2p)] text-muted-foreground/60">
+          <span className="text-[9px] font-(family-name:--font-press-start-2p) text-muted-foreground/60">
             {item.year}
           </span>
           <span
-            className={`flex items-center gap-1 text-[9px] font-[family-name:var(--font-press-start-2p)] font-bold ${theme.text} opacity-60 group-hover:opacity-100 transition-opacity`}
+            className={`flex items-center gap-1 text-[9px] font-(family-name:--font-press-start-2p) font-bold ${theme.text} opacity-60 group-hover:opacity-100 transition-opacity`}
           >
             {item.href ? (
-              <>[ LIHAT DEMO ] <ExternalLink className="size-2.5" /></>
+              <>
+                [ LIHAT DEMO ] <ExternalLink className="size-2.5" />
+              </>
             ) : (
               <>[ DETAIL ]</>
             )}
@@ -195,7 +211,12 @@ export default function PortfolioCard({
 
   if (item.href) {
     return (
-      <Link href={item.href} target="_blank" rel="noopener noreferrer" className="flex h-full">
+      <Link
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex h-full"
+      >
         {CardContent}
       </Link>
     );

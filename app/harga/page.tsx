@@ -210,10 +210,10 @@ export default function HargaPage() {
         <section className="w-full pt-28 pb-16 px-4">
           <div className="container mx-auto max-w-6xl">
             <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="flex flex-col items-center text-center mb-12">
-              <span className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)]">
+              <span className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-(family-name:--font-press-start-2p)">
                 TECHMATE — SHOP
               </span>
-              <h1 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 mb-6 uppercase">
+              <h1 className="text-3xl md:text-5xl font-bold font-(family-name:--font-press-start-2p) leading-tight text-transparent bg-clip-text bg-linear-to-r from-green-400 to-emerald-600 mb-6 uppercase">
                 PAKET & HARGA
               </h1>
               <p className="max-w-2xl text-sm md:text-base text-muted-foreground">
@@ -226,7 +226,7 @@ export default function HargaPage() {
                 <button
                   key={cat.id}
                   onClick={() => setActive(cat.id)}
-                  className={`px-4 py-2.5 font-[family-name:var(--font-press-start-2p)] text-[8px] border-2 rounded-none transition-all cursor-pointer ${active === cat.id ? "bg-green-500 text-black border-green-400 shadow-[3px_3px_0_0_rgba(34,197,94,0.4)]" : "bg-card text-muted-foreground border-border hover:border-green-500/50"}`}
+                  className={`px-4 py-2.5 font-(family-name:--font-press-start-2p) text-[8px] border-2 rounded-none transition-all cursor-pointer ${active === cat.id ? "bg-green-500 text-black border-green-400 shadow-[3px_3px_0_0_rgba(34,197,94,0.4)]" : "bg-card text-muted-foreground border-border hover:border-green-500/50"}`}
                 >
                   {cat.label}
                 </button>
@@ -246,17 +246,17 @@ export default function HargaPage() {
               <div className="absolute top-[-2px] right-[-2px] w-2 h-2 bg-background" />
               <div className="absolute bottom-[-2px] left-[-2px] w-2 h-2 bg-background" />
               <div className="absolute bottom-[-2px] right-[-2px] w-2 h-2 bg-background" />
-              <p className="font-[family-name:var(--font-press-start-2p)] text-xs text-foreground mb-2">Gak Yakin Pilih Paket yang Mana?</p>
+              <p className="font-(family-name:--font-press-start-2p) text-xs text-foreground mb-2">Gak Yakin Pilih Paket yang Mana?</p>
               <p className="text-sm text-muted-foreground mb-5 max-w-md mx-auto">
                 Pakai kalkulator estimasi kami untuk dapet gambaran harga yang lebih akurat sesuai kebutuhan spesifik lo.
               </p>
-              <a href="/kalkulator" className="inline-flex items-center gap-2 px-6 py-3 bg-card border-2 border-green-500 text-green-400 font-[family-name:var(--font-press-start-2p)] text-[9px] font-bold hover:bg-green-500/10 transition-colors rounded-none">
+              <a href="/kalkulator" className="inline-flex items-center gap-2 px-6 py-3 bg-card border-2 border-green-500 text-green-400 font-(family-name:--font-press-start-2p) text-[9px] font-bold hover:bg-green-500/10 transition-colors rounded-none">
                 COBA KALKULATOR HARGA →
               </a>
             </motion.div>
           </div>
         </section>
-        <footer className="w-full py-10 px-4 bg-card/80 backdrop-blur-sm border-t border-border text-center font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground">
+        <footer className="w-full py-10 px-4 bg-card/80 backdrop-blur-sm border-t border-border text-center font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground">
           <p>© {new Date().getFullYear()} TECHMATE. ALL RIGHTS RESERVED.</p>
         </footer>
       </div>

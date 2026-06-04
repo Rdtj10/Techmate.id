@@ -25,20 +25,20 @@ export default function NewsletterFooter() {
               <div className="w-8 h-8 bg-green-500/10 border-2 border-green-500 flex items-center justify-center">
                 <Swords className="size-4 text-green-400" />
               </div>
-              <span className="font-[family-name:var(--font-press-start-2p)] text-[10px] text-foreground">TECHMATE</span>
+              <span className="font-(family-name:--font-press-start-2p) text-[10px] text-foreground">TECHMATE</span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
               Tim teknologi yang siap bantu bisnis dan individu menang di dunia digital. Software, hardware, dan IT consultation.
             </p>
             <div className="flex gap-3 flex-wrap">
               {["⚗ Software", "🛡 Hardware", "🔥 Konsultasi"].map((s) => (
-                <span key={s} className="px-2 py-0.5 border border-border text-[8px] font-[family-name:var(--font-press-start-2p)] text-muted-foreground">{s}</span>
+                <span key={s} className="px-2 py-0.5 border border-border text-[8px] font-(family-name:--font-press-start-2p) text-muted-foreground">{s}</span>
               ))}
             </div>
           </div>
 
           <div className="flex flex-col gap-3">
-            <p className="font-[family-name:var(--font-press-start-2p)] text-[9px] text-muted-foreground/60 tracking-widest uppercase mb-2">NAVIGASI</p>
+            <p className="font-(family-name:--font-press-start-2p) text-[9px] text-muted-foreground/60 tracking-widest uppercase mb-2">NAVIGASI</p>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2">
               {[
                 { label: "Layanan", href: "/layanan/suhu-software" },
@@ -50,7 +50,7 @@ export default function NewsletterFooter() {
                 { label: "Tentang", href: "/tentang" },
                 { label: "Kontak", href: "https://wa.me/628123456789" },
               ].map((item) => (
-                <Link key={item.label} href={item.href} className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground hover:text-green-400 transition-colors">
+                <Link key={item.label} href={item.href} className="font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground hover:text-green-400 transition-colors">
                   › {item.label}
                 </Link>
               ))}
@@ -58,12 +58,12 @@ export default function NewsletterFooter() {
           </div>
 
           <div className="flex flex-col gap-3">
-            <p className="font-[family-name:var(--font-press-start-2p)] text-[9px] text-muted-foreground/60 tracking-widest uppercase mb-2">PATCH NOTES SUBSCRIBE</p>
+            <p className="font-(family-name:--font-press-start-2p) text-[9px] text-muted-foreground/60 tracking-widest uppercase mb-2">PATCH NOTES SUBSCRIBE</p>
             <p className="text-xs text-muted-foreground leading-relaxed">
               Dapetin tips IT, update promo, dan insight teknologi terbaru langsung ke inbox lo. No spam!
             </p>
             {subscribed ? (
-              <div className="flex items-center gap-2 text-green-400 font-[family-name:var(--font-press-start-2p)] text-[8px]">
+              <div className="flex items-center gap-2 text-green-400 font-(family-name:--font-press-start-2p) text-[8px]">
                 <Check className="size-4" />
                 BERHASIL SUBSCRIBE!
               </div>
@@ -90,14 +90,14 @@ export default function NewsletterFooter() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
-          <div className="flex gap-6 justify-center text-muted-foreground/80 font-[family-name:var(--font-press-start-2p)] text-[8px] uppercase flex-wrap">
+          <div className="flex gap-6 justify-center text-muted-foreground/80 font-(family-name:--font-press-start-2p) text-[8px] uppercase flex-wrap">
             <a href="#services" className="hover:text-green-400 transition-colors">CLASSES</a>
             <a href="#portofolio" className="hover:text-green-400 transition-colors">PORTOFOLIO</a>
             <a href="#faq" className="hover:text-green-400 transition-colors">FAQ</a>
             <a href="#booking" className="hover:text-green-400 transition-colors">BOOKING</a>
             <a href="#boss-battle" className="hover:text-green-400 transition-colors">BOSS FIGHT</a>
           </div>
-          <p className="font-[family-name:var(--font-press-start-2p)] text-[7px] text-muted-foreground/50">
+          <p className="font-(family-name:--font-press-start-2p) text-[7px] text-muted-foreground/50">
             © {new Date().getFullYear()} TECHMATE. INSERT COIN TO CONTINUE.
           </p>
         </div>

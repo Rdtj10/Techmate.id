@@ -52,22 +52,30 @@ export default function PromoBanner() {
         >
           <div className="w-full bg-green-600 border-b-2 border-green-400 px-4 py-2 flex items-center justify-between gap-4 relative">
             <div className="flex items-center gap-3 flex-1 min-w-0 flex-wrap justify-center">
-              <span className="flex items-center gap-1.5 font-[family-name:var(--font-press-start-2p)] text-[7px] md:text-[8px] text-black font-bold whitespace-nowrap">
+              <span className="flex items-center gap-1.5 font-(family-name:--font-press-start-2p) text-[7px] md:text-[8px] text-black font-bold whitespace-nowrap">
                 <Zap className="size-3 text-yellow-300 animate-pulse" />
                 PROMO: DISKON 20% WEB UMKM!
               </span>
-              <div className="flex items-center gap-1 font-[family-name:var(--font-press-start-2p)] text-[7px] text-black/80">
+              <div className="flex items-center gap-1 font-(family-name:--font-press-start-2p) text-[7px] text-black/80">
                 <span>Berakhir:</span>
-                <span className="bg-black/20 px-1.5 py-0.5 font-bold text-black">{pad(days)}H</span>
-                <span className="bg-black/20 px-1.5 py-0.5 font-bold text-black">{pad(hours)}J</span>
-                <span className="bg-black/20 px-1.5 py-0.5 font-bold text-black">{pad(mins)}M</span>
-                <span className="bg-black/20 px-1.5 py-0.5 font-bold text-black">{pad(secs)}D</span>
+                <span className="bg-black/20 px-1.5 py-0.5 font-bold text-black">
+                  {pad(days)}H
+                </span>
+                <span className="bg-black/20 px-1.5 py-0.5 font-bold text-black">
+                  {pad(hours)}J
+                </span>
+                <span className="bg-black/20 px-1.5 py-0.5 font-bold text-black">
+                  {pad(mins)}M
+                </span>
+                <span className="bg-black/20 px-1.5 py-0.5 font-bold text-black">
+                  {pad(secs)}D
+                </span>
               </div>
               <a
                 href="https://wa.me/628123456789?text=Halo!+Saya+mau+tanya+promo+diskon+20%+web+UMKM."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-[family-name:var(--font-press-start-2p)] text-[7px] bg-black text-green-400 px-2 py-1 border border-green-400 hover:bg-green-900 transition-colors whitespace-nowrap"
+                className="font-(family-name:--font-press-start-2p) text-[7px] bg-black text-green-400 px-2 py-1 border border-green-400 hover:bg-green-900 transition-colors whitespace-nowrap"
               >
                 KLAIM SEKARANG →
               </a>

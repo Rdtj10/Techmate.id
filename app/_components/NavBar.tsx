@@ -15,9 +15,21 @@ const navLinks = [
     label: "LAYANAN",
     href: "#",
     children: [
-      { label: "⚗ Suhu Software", href: "/layanan/suhu-software", color: "text-green-400" },
-      { label: "🛡 Ksatria Hardware", href: "/layanan/ksatria-hardware", color: "text-blue-400" },
-      { label: "🔥 Suhu Curhat IT", href: "/layanan/suhu-curhat-it", color: "text-amber-400" },
+      {
+        label: "⚗ Suhu Software",
+        href: "/layanan/suhu-software",
+        color: "text-green-400",
+      },
+      {
+        label: "🛡 Ksatria Hardware",
+        href: "/layanan/ksatria-hardware",
+        color: "text-blue-400",
+      },
+      {
+        label: "🔥 Suhu Curhat IT",
+        href: "/layanan/suhu-curhat-it",
+        color: "text-amber-400",
+      },
     ],
   },
   { label: "SQUAD", href: "/squad" },
@@ -27,7 +39,11 @@ const navLinks = [
     href: "#",
     children: [
       { label: "💰 Harga & Paket", href: "/harga", color: "text-green-400" },
-      { label: "🧮 Kalkulator Harga", href: "/kalkulator", color: "text-blue-400" },
+      {
+        label: "🧮 Kalkulator Harga",
+        href: "/kalkulator",
+        color: "text-blue-400",
+      },
       { label: "📝 Blog & Tips", href: "/blog", color: "text-purple-400" },
       { label: "ℹ Tentang Kami", href: "/tentang", color: "text-amber-400" },
     ],
@@ -81,7 +97,9 @@ export default function NavBar() {
   const handleLogoClick = () => {
     logoClickCount.current += 1;
     if (logoClickTimer.current) clearTimeout(logoClickTimer.current);
-    logoClickTimer.current = setTimeout(() => { logoClickCount.current = 0; }, 1500);
+    logoClickTimer.current = setTimeout(() => {
+      logoClickCount.current = 0;
+    }, 1500);
     if (logoClickCount.current >= 5) {
       logoClickCount.current = 0;
       setEasterOpen(true);
@@ -101,12 +119,14 @@ export default function NavBar() {
       >
         <div className="container mx-auto max-w-6xl px-4">
           <div className="flex items-center justify-between h-16">
-
-            <button onClick={handleLogoClick} className="flex items-center gap-2 group cursor-pointer bg-transparent border-none p-0">
+            <button
+              onClick={handleLogoClick}
+              className="flex items-center gap-2 group cursor-pointer bg-transparent border-none p-0"
+            >
               <div className="w-8 h-8 bg-green-500/10 border-2 border-green-500 flex items-center justify-center">
                 <Swords className="size-4 text-green-400" />
               </div>
-              <span className="font-[family-name:var(--font-press-start-2p)] text-[10px] md:text-xs text-foreground group-hover:text-green-400 transition-colors tracking-wider">
+              <span className="font-(family-name:--font-press-start-2p) text-[10px] md:text-xs text-foreground group-hover:text-green-400 transition-colors tracking-wider">
                 TECHMATE
               </span>
             </button>
@@ -120,9 +140,11 @@ export default function NavBar() {
                     onMouseEnter={() => setOpenDropdown(link.label)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
-                    <button className="flex items-center gap-1 px-3 py-2 font-[family-name:var(--font-press-start-2p)] text-[9px] text-zinc-400 hover:text-green-400 transition-colors tracking-wider uppercase cursor-pointer">
+                    <button className="flex items-center gap-1 px-3 py-2 font-(family-name:--font-press-start-2p) text-[9px] text-zinc-400 hover:text-green-400 transition-colors tracking-wider uppercase cursor-pointer">
                       {link.label}
-                      <ChevronDown className={`size-3 transition-transform ${openDropdown === link.label ? "rotate-180" : ""}`} />
+                      <ChevronDown
+                        className={`size-3 transition-transform ${openDropdown === link.label ? "rotate-180" : ""}`}
+                      />
                     </button>
                     <AnimatePresence>
                       {openDropdown === link.label && (
@@ -137,7 +159,7 @@ export default function NavBar() {
                             <Link
                               key={child.href}
                               href={child.href}
-                              className={`flex items-center px-4 py-3 font-[family-name:var(--font-press-start-2p)] text-[8px] ${child.color} hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors tracking-wider`}
+                              className={`flex items-center px-4 py-3 font-(family-name:--font-press-start-2p) text-[8px] ${child.color} hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors tracking-wider`}
                             >
                               {child.label}
                             </Link>
@@ -152,20 +174,22 @@ export default function NavBar() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className={`px-3 py-2 font-[family-name:var(--font-press-start-2p)] text-[9px] tracking-wider uppercase transition-colors ${
-                      pathname === link.href ? "text-green-400" : "text-zinc-400 hover:text-foreground"
+                    className={`px-3 py-2 font-(family-name:--font-press-start-2p) text-[9px] tracking-wider uppercase transition-colors ${
+                      pathname === link.href
+                        ? "text-green-400"
+                        : "text-zinc-400 hover:text-foreground"
                     }`}
                   >
                     {link.label}
                   </Link>
-                )
+                ),
               )}
 
               <Link
                 href="https://wa.me/628123456789"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-2 px-4 py-2 bg-green-600 hover:bg-green-500 text-black font-[family-name:var(--font-press-start-2p)] text-[9px] font-bold border-2 border-green-400 shadow-[2px_2px_0_0_rgba(74,222,128,0.4)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0_0_rgba(74,222,128,0.4)] transition-all"
+                className="ml-2 px-4 py-2 bg-green-600 hover:bg-green-500 text-black font-(family-name:--font-press-start-2p) text-[9px] font-bold border-2 border-green-400 shadow-[2px_2px_0_0_rgba(74,222,128,0.4)] hover:translate-x-px hover:translate-y-px hover:shadow-[1px_1px_0_0_rgba(74,222,128,0.4)] transition-all"
               >
                 MABAR KUY!
               </Link>
@@ -187,7 +211,11 @@ export default function NavBar() {
               className="md:hidden p-2 text-zinc-400 hover:text-foreground transition-colors cursor-pointer"
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+              {mobileOpen ? (
+                <X className="size-5" />
+              ) : (
+                <Menu className="size-5" />
+              )}
             </button>
           </div>
         </div>
@@ -205,14 +233,14 @@ export default function NavBar() {
                 {navLinks.map((link) =>
                   link.children ? (
                     <div key={link.label}>
-                      <p className="px-3 py-2 font-[family-name:var(--font-press-start-2p)] text-[8px] text-zinc-600 tracking-wider uppercase">
+                      <p className="px-3 py-2 font-(family-name:--font-press-start-2p) text-[8px] text-zinc-600 tracking-wider uppercase">
                         {link.label}
                       </p>
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className={`flex items-center pl-6 pr-3 py-2.5 font-[family-name:var(--font-press-start-2p)] text-[8px] ${child.color} hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors tracking-wider`}
+                          className={`flex items-center pl-6 pr-3 py-2.5 font-(family-name:--font-press-start-2p) text-[8px] ${child.color} hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors tracking-wider`}
                         >
                           {child.label}
                         </Link>
@@ -224,28 +252,34 @@ export default function NavBar() {
                       href={link.href}
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
-                      className="px-3 py-2.5 font-[family-name:var(--font-press-start-2p)] text-[9px] text-zinc-400 hover:text-foreground tracking-wider uppercase transition-colors"
+                      className="px-3 py-2.5 font-(family-name:--font-press-start-2p) text-[9px] text-zinc-400 hover:text-foreground tracking-wider uppercase transition-colors"
                     >
                       {link.label}
                     </Link>
-                  )
+                  ),
                 )}
                 <Link
                   href="https://wa.me/628123456789"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 px-4 py-3 bg-green-600 hover:bg-green-500 text-black font-[family-name:var(--font-press-start-2p)] text-[9px] font-bold border-2 border-green-400 text-center transition-all"
+                  className="mt-2 px-4 py-3 bg-green-600 hover:bg-green-500 text-black font-(family-name:--font-press-start-2p) text-[9px] font-bold border-2 border-green-400 text-center transition-all"
                 >
                   MABAR KUY!
                 </Link>
                 <button
                   onClick={toggleTheme}
-                  className="mt-2 px-4 py-3 border-2 border-border bg-card text-foreground font-[family-name:var(--font-press-start-2p)] text-[9px] font-bold text-center flex items-center justify-center gap-2 transition-all cursor-pointer rounded-none"
+                  className="mt-2 px-4 py-3 border-2 border-border bg-card text-foreground font-(family-name:--font-press-start-2p) text-[9px] font-bold text-center flex items-center justify-center gap-2 transition-all cursor-pointer rounded-none"
                 >
                   {theme === "dark" ? (
-                    <><Sun className="size-3.5 text-yellow-400 animate-pulse" /><span>LIGHT MODE</span></>
+                    <>
+                      <Sun className="size-3.5 text-yellow-400 animate-pulse" />
+                      <span>LIGHT MODE</span>
+                    </>
                   ) : (
-                    <><Moon className="size-3.5 text-indigo-600" /><span>DARK MODE</span></>
+                    <>
+                      <Moon className="size-3.5 text-indigo-600" />
+                      <span>DARK MODE</span>
+                    </>
                   )}
                 </button>
               </nav>

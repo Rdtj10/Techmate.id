@@ -51,11 +51,11 @@ export default function PortfolioPage() {
               transition={{ duration: 0.6 }}
               className="flex flex-col items-center text-center mb-12"
             >
-              <span className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)]">
+              <span className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-(family-name:--font-press-start-2p)">
                 HALL OF FAME — TECHMATE
               </span>
 
-              <h1 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 mb-6 uppercase tracking-wide drop-shadow-lg">
+              <h1 className="text-3xl md:text-5xl font-bold font-(family-name:--font-press-start-2p) leading-tight text-transparent bg-clip-text bg-linear-to-r from-green-400 to-emerald-600 mb-6 uppercase tracking-wide drop-shadow-lg">
                 PAPAN MISI
               </h1>
 
@@ -79,10 +79,10 @@ export default function PortfolioPage() {
                   <div className="absolute top-[-2px] right-[-2px] w-1.5 h-1.5 bg-background" />
                   <div className="absolute bottom-[-2px] left-[-2px] w-1.5 h-1.5 bg-background" />
                   <div className="absolute bottom-[-2px] right-[-2px] w-1.5 h-1.5 bg-background" />
-                  <p className={`font-[family-name:var(--font-press-start-2p)] text-2xl md:text-3xl font-bold ${stat.color}`}>
+                  <p className={`font-(family-name:--font-press-start-2p) text-2xl md:text-3xl font-bold ${stat.color}`}>
                     {stat.value}
                   </p>
-                  <p className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground mt-2 uppercase tracking-wider">
+                  <p className="font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground mt-2 uppercase tracking-wider">
                     {stat.label}
                   </p>
                 </div>
@@ -96,7 +96,7 @@ export default function PortfolioPage() {
               className="mb-8"
             >
               <div className="hidden md:flex items-center gap-2 flex-wrap">
-                <span className="flex items-center gap-1.5 font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground mr-2">
+                <span className="flex items-center gap-1.5 font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground mr-2">
                   <Filter className="size-3" /> FILTER:
                 </span>
                 {filterOptions.map((opt) => (
@@ -104,7 +104,7 @@ export default function PortfolioPage() {
                     key={opt.value}
                     id={`filter-${opt.value}`}
                     onClick={() => setActiveFilter(opt.value)}
-                    className={`px-3 py-2 font-[family-name:var(--font-press-start-2p)] text-[8px] border-2 rounded-none transition-all cursor-pointer ${
+                    className={`px-3 py-2 font-(family-name:--font-press-start-2p) text-[8px] border-2 rounded-none transition-all cursor-pointer ${
                       activeFilter === opt.value
                         ? "bg-green-500 text-black border-green-400 shadow-[2px_2px_0_0_rgba(34,197,94,0.4)]"
                         : "bg-card text-muted-foreground border-border hover:border-green-500/50 hover:text-foreground"
@@ -118,7 +118,7 @@ export default function PortfolioPage() {
               <div className="md:hidden relative">
                 <button
                   onClick={() => setShowFilter(!showFilter)}
-                  className="w-full flex items-center justify-between px-4 py-3 bg-card border-2 border-border font-[family-name:var(--font-press-start-2p)] text-[9px] text-foreground cursor-pointer"
+                  className="w-full flex items-center justify-between px-4 py-3 bg-card border-2 border-border font-(family-name:--font-press-start-2p) text-[9px] text-foreground cursor-pointer"
                 >
                   <span className="flex items-center gap-2">
                     <Filter className="size-3" />
@@ -138,7 +138,7 @@ export default function PortfolioPage() {
                         <button
                           key={opt.value}
                           onClick={() => { setActiveFilter(opt.value); setShowFilter(false); }}
-                          className={`w-full text-left px-4 py-3 font-[family-name:var(--font-press-start-2p)] text-[8px] border-b border-border transition-colors cursor-pointer ${
+                          className={`w-full text-left px-4 py-3 font-(family-name:--font-press-start-2p) text-[8px] border-b border-border transition-colors cursor-pointer ${
                             activeFilter === opt.value
                               ? "bg-green-500/20 text-green-400"
                               : "text-muted-foreground hover:bg-background hover:text-foreground"
@@ -169,7 +169,7 @@ export default function PortfolioPage() {
             </AnimatePresence>
 
             {filtered.length === 0 && (
-              <div className="text-center py-20 text-muted-foreground font-[family-name:var(--font-press-start-2p)] text-xs">
+              <div className="text-center py-20 text-muted-foreground font-(family-name:--font-press-start-2p) text-xs">
                 <Trophy className="size-12 mx-auto mb-4 opacity-20" />
                 <p>Belum ada misi di kategori ini...</p>
               </div>
@@ -187,7 +187,7 @@ export default function PortfolioPage() {
               <div className="absolute bottom-[-2px] left-[-2px] w-2 h-2 bg-background" />
               <div className="absolute bottom-[-2px] right-[-2px] w-2 h-2 bg-background" />
 
-              <p className="font-[family-name:var(--font-press-start-2p)] text-xs md:text-sm text-green-400 mb-2">
+              <p className="font-(family-name:--font-press-start-2p) text-xs md:text-sm text-green-400 mb-2">
                 ⚔ PUNYA MISI BUAT KAMI?
               </p>
               <p className="text-sm text-muted-foreground mb-5 max-w-lg mx-auto">
@@ -197,7 +197,7 @@ export default function PortfolioPage() {
                 href="https://wa.me/628123456789"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-500 text-black font-[family-name:var(--font-press-start-2p)] text-[9px] font-bold border-2 border-green-400 shadow-[4px_4px_0_0_rgba(74,222,128,0.4)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(74,222,128,0.4)] transition-all rounded-none"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-500 text-black font-(family-name:--font-press-start-2p) text-[9px] font-bold border-2 border-green-400 shadow-[4px_4px_0_0_rgba(74,222,128,0.4)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(74,222,128,0.4)] transition-all rounded-none"
               >
                 MULAI MISI BARU →
               </a>
@@ -205,7 +205,7 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        <footer className="w-full py-10 px-4 bg-card/80 backdrop-blur-sm border-t border-border text-center font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground tracking-wider">
+        <footer className="w-full py-10 px-4 bg-card/80 backdrop-blur-sm border-t border-border text-center font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground tracking-wider">
           <p>© {new Date().getFullYear()} TECHMATE. ALL RIGHTS RESERVED.</p>
         </footer>
       </div>

@@ -59,7 +59,7 @@ export default function FaqSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)]"
+            className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-(family-name:--font-press-start-2p)"
           >
             Level 7: Papan Pertanyaan
           </motion.span>
@@ -69,7 +69,7 @@ export default function FaqSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-2xl md:text-4xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-foreground mb-6 uppercase tracking-wide"
+            className="text-2xl md:text-4xl font-bold font-(family-name:--font-press-start-2p) leading-tight text-foreground mb-6 uppercase tracking-wide"
           >
             PERTANYAAN UMUM (FAQ)
           </motion.h2>
@@ -108,7 +108,7 @@ export default function FaqSection() {
             href="https://wa.me/628123456789?text=Halo+Techmate!+Saya+punya+pertanyaan."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-card border-2 border-green-500 text-green-400 font-[family-name:var(--font-press-start-2p)] text-[9px] font-bold hover:bg-green-500/10 transition-colors rounded-none"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-card border-2 border-green-500 text-green-400 font-(family-name:--font-press-start-2p) text-[9px] font-bold hover:bg-green-500/10 transition-colors rounded-none"
           >
             TANYA LANGSUNG VIA WA →
           </a>

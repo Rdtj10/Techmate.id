@@ -54,10 +54,10 @@ export default function TentangPage() {
         <section className="w-full pt-28 pb-16 px-4">
           <div className="container mx-auto max-w-5xl">
             <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="flex flex-col items-center text-center mb-16">
-              <span className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)]">
+              <span className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-(family-name:--font-press-start-2p)">
                 TECHMATE — LORE
               </span>
-              <h1 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 mb-6 uppercase">
+              <h1 className="text-3xl md:text-5xl font-bold font-(family-name:--font-press-start-2p) leading-tight text-transparent bg-clip-text bg-linear-to-r from-green-400 to-emerald-600 mb-6 uppercase">
                 TENTANG KAMI
               </h1>
               <p className="max-w-2xl text-sm md:text-base text-muted-foreground">
@@ -76,23 +76,23 @@ export default function TentangPage() {
                   <div className="absolute bottom-[-2px] left-[-2px] w-1.5 h-1.5 bg-background" />
                   <div className="absolute bottom-[-2px] right-[-2px] w-1.5 h-1.5 bg-background" />
                   <p className="text-3xl mb-3">{item.icon}</p>
-                  <h2 className="font-[family-name:var(--font-press-start-2p)] text-xs text-green-400 mb-3">{item.title}</h2>
+                  <h2 className="font-(family-name:--font-press-start-2p) text-xs text-green-400 mb-3">{item.title}</h2>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
                 </motion.div>
               ))}
             </div>
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-16">
-              <h2 className="font-[family-name:var(--font-press-start-2p)] text-sm md:text-base text-foreground text-center mb-10 uppercase">⚙ TECH STACK KAMI</h2>
+              <h2 className="font-(family-name:--font-press-start-2p) text-sm md:text-base text-foreground text-center mb-10 uppercase">⚙ TECH STACK KAMI</h2>
               <div className="flex flex-col gap-6">
                 {categories.map((cat) => (
                   <div key={cat}>
-                    <p className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground mb-3">{cat.toUpperCase()}:</p>
+                    <p className="font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground mb-3">{cat.toUpperCase()}:</p>
                     <div className="flex flex-wrap gap-3">
                       {techStack.filter((t) => t.category === cat).map((tech, i) => (
                         <motion.div key={tech.name} initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} whileHover={{ y: -3 }} className="flex items-center gap-2 px-3 py-2 bg-card border-2 border-border hover:border-green-500/50 transition-all">
                           <span className={`${tech.color} font-bold text-sm`}>{tech.icon}</span>
-                          <span className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-foreground">{tech.name}</span>
+                          <span className="font-(family-name:--font-press-start-2p) text-[8px] text-foreground">{tech.name}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -102,7 +102,7 @@ export default function TentangPage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-16">
-              <h2 className="font-[family-name:var(--font-press-start-2p)] text-sm md:text-base text-foreground text-center mb-10 uppercase">🏆 SERTIFIKASI & PENCAPAIAN</h2>
+              <h2 className="font-(family-name:--font-press-start-2p) text-sm md:text-base text-foreground text-center mb-10 uppercase">🏆 SERTIFIKASI & PENCAPAIAN</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {certifications.map((cert, i) => (
                   <motion.div key={cert.name} initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`flex items-center gap-4 p-4 bg-card border-2 ${colorMap[cert.color]} relative`}>
@@ -112,8 +112,8 @@ export default function TentangPage() {
                     <div className="absolute bottom-[-2px] right-[-2px] w-1.5 h-1.5 bg-background" />
                     <span className="text-3xl shrink-0">{cert.icon}</span>
                     <div>
-                      <p className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-foreground leading-relaxed">{cert.name}</p>
-                      <p className={`font-[family-name:var(--font-press-start-2p)] text-[7px] mt-1 ${colorMap[cert.color].split(" ")[1]}`}>{cert.level}</p>
+                      <p className="font-(family-name:--font-press-start-2p) text-[8px] text-foreground leading-relaxed">{cert.name}</p>
+                      <p className={`font-(family-name:--font-press-start-2p) text-[7px] mt-1 ${colorMap[cert.color].split(" ")[1]}`}>{cert.level}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -121,7 +121,7 @@ export default function TentangPage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-16">
-              <h2 className="font-[family-name:var(--font-press-start-2p)] text-sm md:text-base text-foreground text-center mb-10 uppercase">📜 TIMELINE TECHMATE</h2>
+              <h2 className="font-(family-name:--font-press-start-2p) text-sm md:text-base text-foreground text-center mb-10 uppercase">📜 TIMELINE TECHMATE</h2>
               <div className="relative">
                 <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border" />
                 <div className="flex flex-col gap-8">
@@ -131,8 +131,8 @@ export default function TentangPage() {
                         <div className="w-2 h-2 bg-green-500" />
                       </div>
                       <div className={`${i % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"} flex-1`}>
-                        <span className={`font-[family-name:var(--font-press-start-2p)] text-[8px] ${colorMap[item.color].split(" ")[1]}`}>{item.year}</span>
-                        <h3 className="font-[family-name:var(--font-press-start-2p)] text-[9px] text-foreground mt-1 mb-1">{item.title}</h3>
+                        <span className={`font-(family-name:--font-press-start-2p) text-[8px] ${colorMap[item.color].split(" ")[1]}`}>{item.year}</span>
+                        <h3 className="font-(family-name:--font-press-start-2p) text-[9px] text-foreground mt-1 mb-1">{item.title}</h3>
                         <p className="text-xs text-muted-foreground">{item.desc}</p>
                       </div>
                       <div className="hidden md:block flex-1" />
@@ -143,7 +143,7 @@ export default function TentangPage() {
             </motion.div>
           </div>
         </section>
-        <footer className="w-full py-10 px-4 bg-card/80 backdrop-blur-sm border-t border-border text-center font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground">
+        <footer className="w-full py-10 px-4 bg-card/80 backdrop-blur-sm border-t border-border text-center font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground">
           <p>© {new Date().getFullYear()} TECHMATE. ALL RIGHTS RESERVED.</p>
         </footer>
       </div>

@@ -83,7 +83,11 @@ export default function EasterEgg({ isOpen, onClose }: EasterEggProps) {
       keys.current.add(e.key);
       if (e.key === " " || e.key === "ArrowUp") {
         e.preventDefault();
-        bullets.current.push({ id: nextId++, x: shipX.current, y: SHIP_Y - 10 });
+        bullets.current.push({
+          id: nextId++,
+          x: shipX.current,
+          y: SHIP_Y - 10,
+        });
       }
     };
     const onKeyUp = (e: KeyboardEvent) => keys.current.delete(e.key);
@@ -115,13 +119,19 @@ export default function EasterEgg({ isOpen, onClose }: EasterEggProps) {
         });
       }
 
-      bugs.current = bugs.current.map((bug) => ({ ...bug, y: bug.y + bug.speed * (dt / 16) }));
+      bugs.current = bugs.current.map((bug) => ({
+        ...bug,
+        y: bug.y + bug.speed * (dt / 16),
+      }));
 
       const hitBugs = new Set<number>();
       const hitBullets = new Set<number>();
       bugs.current.forEach((bug) => {
         bullets.current.forEach((bullet) => {
-          if (Math.abs(bug.x - bullet.x) < BUG_SIZE && Math.abs(bug.y - bullet.y) < BUG_SIZE) {
+          if (
+            Math.abs(bug.x - bullet.x) < BUG_SIZE &&
+            Math.abs(bug.y - bullet.y) < BUG_SIZE
+          ) {
             hitBugs.add(bug.id);
             hitBullets.add(bullet.id);
             scoreRef.current += 10;
@@ -188,7 +198,7 @@ export default function EasterEgg({ isOpen, onClose }: EasterEggProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-999 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
           onClick={onClose}
         >
           <motion.div
@@ -204,25 +214,54 @@ export default function EasterEgg({ isOpen, onClose }: EasterEggProps) {
             <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-background" />
 
             <div className="flex items-center justify-between mb-3">
-              <p className="font-[family-name:var(--font-press-start-2p)] text-[9px] text-green-400">🎮 BASMI BUG!</p>
+              <p className="font-(family-name:--font-press-start-2p) text-[9px] text-green-400">
+                🎮 BASMI BUG!
+              </p>
               <div className="flex items-center gap-4">
-                <span className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-foreground">SCORE: {score}</span>
-                <span className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-amber-400">HI: {highScore}</span>
-                <span className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-red-400">{"❤".repeat(Math.max(0, lives))}</span>
-                <button onClick={onClose} className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer">
+                <span className="font-(family-name:--font-press-start-2p) text-[8px] text-foreground">
+                  SCORE: {score}
+                </span>
+                <span className="font-(family-name:--font-press-start-2p) text-[8px] text-amber-400">
+                  HI: {highScore}
+                </span>
+                <span className="font-(family-name:--font-press-start-2p) text-[8px] text-red-400">
+                  {"❤".repeat(Math.max(0, lives))}
+                </span>
+                <button
+                  onClick={onClose}
+                  className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                >
                   <X className="size-4" />
                 </button>
               </div>
             </div>
 
-            <div className="relative border-2 border-border bg-black" style={{ width: CANVAS_W, height: CANVAS_H, maxWidth: "100%" }}>
-              <canvas ref={canvasRef} width={CANVAS_W} height={CANVAS_H} className="block w-full h-full" style={{ imageRendering: "pixelated" }} />
+            <div
+              className="relative border-2 border-border bg-black"
+              style={{ width: CANVAS_W, height: CANVAS_H, maxWidth: "100%" }}
+            >
+              <canvas
+                ref={canvasRef}
+                width={CANVAS_W}
+                height={CANVAS_H}
+                className="block w-full h-full"
+                style={{ imageRendering: "pixelated" }}
+              />
 
               {!started && !gameOver && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 gap-4">
-                  <p className="font-[family-name:var(--font-press-start-2p)] text-[9px] text-green-400 text-center">BASMI SEMUA BUG!</p>
-                  <p className="font-[family-name:var(--font-press-start-2p)] text-[7px] text-muted-foreground text-center">← → atau A D: gerak<br />SPACE / ↑: tembak</p>
-                  <button onClick={startGame} className="px-4 py-2 bg-green-500 text-black font-[family-name:var(--font-press-start-2p)] text-[8px] font-bold border-2 border-green-400 cursor-pointer hover:bg-green-400 transition-colors">
+                  <p className="font-(family-name:--font-press-start-2p) text-[9px] text-green-400 text-center">
+                    BASMI SEMUA BUG!
+                  </p>
+                  <p className="font-(family-name:--font-press-start-2p) text-[7px] text-muted-foreground text-center">
+                    ← → atau A D: gerak
+                    <br />
+                    SPACE / ↑: tembak
+                  </p>
+                  <button
+                    onClick={startGame}
+                    className="px-4 py-2 bg-green-500 text-black font-(family-name:--font-press-start-2p) text-[8px] font-bold border-2 border-green-400 cursor-pointer hover:bg-green-400 transition-colors"
+                  >
                     MULAI GAME
                   </button>
                 </div>
@@ -231,17 +270,28 @@ export default function EasterEgg({ isOpen, onClose }: EasterEggProps) {
               {gameOver && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/90 gap-4">
                   <Trophy className="size-10 text-amber-400" />
-                  <p className="font-[family-name:var(--font-press-start-2p)] text-[10px] text-red-400">GAME OVER</p>
-                  <p className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-foreground">SCORE: {score}</p>
-                  {score === highScore && score > 0 && <p className="font-[family-name:var(--font-press-start-2p)] text-[7px] text-amber-400 animate-pulse">🏆 NEW HIGH SCORE!</p>}
-                  <button onClick={startGame} className="px-4 py-2 bg-green-500 text-black font-[family-name:var(--font-press-start-2p)] text-[8px] font-bold border-2 border-green-400 cursor-pointer hover:bg-green-400 transition-colors">
+                  <p className="font-(family-name:--font-press-start-2p) text-[10px] text-red-400">
+                    GAME OVER
+                  </p>
+                  <p className="font-(family-name:--font-press-start-2p) text-[8px] text-foreground">
+                    SCORE: {score}
+                  </p>
+                  {score === highScore && score > 0 && (
+                    <p className="font-(family-name:--font-press-start-2p) text-[7px] text-amber-400 animate-pulse">
+                      🏆 NEW HIGH SCORE!
+                    </p>
+                  )}
+                  <button
+                    onClick={startGame}
+                    className="px-4 py-2 bg-green-500 text-black font-(family-name:--font-press-start-2p) text-[8px] font-bold border-2 border-green-400 cursor-pointer hover:bg-green-400 transition-colors"
+                  >
                     MAIN LAGI
                   </button>
                 </div>
               )}
             </div>
 
-            <p className="font-[family-name:var(--font-press-start-2p)] text-[6px] text-muted-foreground/40 mt-2 text-center">
+            <p className="font-(family-name:--font-press-start-2p) text-[6px] text-muted-foreground/40 mt-2 text-center">
               🥚 EASTER EGG — KLIK LOGO TECHMATE 5X UNTUK BUKA
             </p>
           </motion.div>

@@ -16,7 +16,7 @@ export default function PortfolioSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)] transition-colors duration-300"
+            className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-(family-name:--font-press-start-2p) transition-colors duration-300"
           >
             Level 6: Hall of Fame
           </motion.span>
@@ -26,7 +26,7 @@ export default function PortfolioSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-2xl md:text-4xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-foreground mb-6 uppercase tracking-wide"
+            className="text-2xl md:text-4xl font-bold font-(family-name:--font-press-start-2p) leading-tight text-foreground mb-6 uppercase tracking-wide"
           >
             MISI YANG UDAH CLEAR
           </motion.h2>
@@ -55,7 +55,7 @@ export default function PortfolioSection() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <div className="flex items-center gap-2 text-muted-foreground font-[family-name:var(--font-press-start-2p)] text-[9px]">
+          <div className="flex items-center gap-2 text-muted-foreground font-(family-name:--font-press-start-2p) text-[9px]">
             <Trophy className="size-3.5 text-amber-400" />
             <span className="text-amber-400 font-bold">9+ MISI CLEARED</span>
             <span>— dan terus bertambah!</span>
@@ -63,7 +63,7 @@ export default function PortfolioSection() {
 
           <Link
             href="/portofolio"
-            className="group flex items-center gap-2 px-6 py-3 bg-card border-2 border-green-500 text-green-400 font-[family-name:var(--font-press-start-2p)] text-[9px] font-bold shadow-[4px_4px_0_0_rgba(34,197,94,0.3)] hover:shadow-[2px_2px_0_0_rgba(34,197,94,0.3)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all rounded-none"
+            className="group flex items-center gap-2 px-6 py-3 bg-card border-2 border-green-500 text-green-400 font-(family-name:--font-press-start-2p) text-[9px] font-bold shadow-[4px_4px_0_0_rgba(34,197,94,0.3)] hover:shadow-[2px_2px_0_0_rgba(34,197,94,0.3)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all rounded-none"
           >
             LIHAT SEMUA MISI
             <ChevronRight className="size-3.5 group-hover:translate-x-1 transition-transform" />

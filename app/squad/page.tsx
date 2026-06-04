@@ -17,7 +17,7 @@ export default function SquadPage() {
       <SquadSelectionSection />
 
       
-      <footer className="w-full py-12 px-4 bg-card border-t border-border text-center font-[family-name:var(--font-press-start-2p)] text-[8px] md:text-[9px] text-muted-foreground tracking-wider transition-colors duration-300">
+      <footer className="w-full py-12 px-4 bg-card border-t border-border text-center font-(family-name:--font-press-start-2p) text-[8px] md:text-[9px] text-muted-foreground tracking-wider transition-colors duration-300">
         <div className="container mx-auto max-w-4xl flex flex-col items-center gap-4">
           <p className="text-muted-foreground/60">
             © {new Date().getFullYear()} TECHMATE. ALL RIGHTS RESERVED. CHOOSE YOUR HERO.

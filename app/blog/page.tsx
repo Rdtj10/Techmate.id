@@ -36,14 +36,14 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
           <div className="absolute bottom-[-2px] left-[-2px] w-1.5 h-1.5 bg-background z-10" />
           <div className="absolute bottom-[-2px] right-[-2px] w-1.5 h-1.5 bg-background z-10" />
 
-          <div className={`h-28 bg-gradient-to-br ${post.coverGradient} flex items-center justify-center text-5xl relative overflow-hidden`}>
+          <div className={`h-28 bg-linear-to-br ${post.coverGradient} flex items-center justify-center text-5xl relative overflow-hidden`}>
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
             <span className="relative z-10 drop-shadow-lg">{post.coverIcon}</span>
           </div>
 
           <div className="p-4 flex flex-col flex-1 gap-2">
             <div className="flex items-center justify-between gap-2">
-              <span className={`font-[family-name:var(--font-press-start-2p)] text-[7px] ${categoryConfig[post.category].color}`}>
+              <span className={`font-(family-name:--font-press-start-2p) text-[7px] ${categoryConfig[post.category].color}`}>
                 {categoryConfig[post.category].label}
               </span>
               <span className="flex items-center gap-1 text-[8px] text-muted-foreground/60">
@@ -51,7 +51,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
               </span>
             </div>
 
-            <h2 className="font-[family-name:var(--font-press-start-2p)] text-[10px] md:text-xs text-foreground leading-relaxed group-hover:text-green-400 transition-colors line-clamp-2">
+            <h2 className="font-(family-name:--font-press-start-2p) text-[10px] md:text-xs text-foreground leading-relaxed group-hover:text-green-400 transition-colors line-clamp-2">
               {post.title}
             </h2>
 
@@ -62,7 +62,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
                 <CalendarDays className="size-2.5" />
                 {new Date(post.date).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })}
               </span>
-              <span className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-green-400 opacity-60 group-hover:opacity-100 transition-opacity">
+              <span className="font-(family-name:--font-press-start-2p) text-[8px] text-green-400 opacity-60 group-hover:opacity-100 transition-opacity">
                 BACA →
               </span>
             </div>
@@ -90,10 +90,10 @@ export default function BlogPage() {
         <section className="w-full pt-28 pb-16 px-4">
           <div className="container mx-auto max-w-6xl">
             <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="flex flex-col items-center text-center mb-12">
-              <span className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)]">
+              <span className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-(family-name:--font-press-start-2p)">
                 TECHMATE — PATCH NOTES
               </span>
-              <h1 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 mb-6 uppercase">
+              <h1 className="text-3xl md:text-5xl font-bold font-(family-name:--font-press-start-2p) leading-tight text-transparent bg-clip-text bg-linear-to-r from-green-400 to-emerald-600 mb-6 uppercase">
                 BLOG & TIPS IT
               </h1>
               <p className="max-w-2xl text-sm md:text-base text-muted-foreground">
@@ -117,7 +117,7 @@ export default function BlogPage() {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`flex items-center gap-1.5 px-3 py-2 font-[family-name:var(--font-press-start-2p)] text-[8px] border-2 rounded-none transition-all cursor-pointer ${activeCategory === cat ? "bg-green-500 text-black border-green-400" : "bg-card text-muted-foreground border-border hover:border-green-500/50"}`}
+                    className={`flex items-center gap-1.5 px-3 py-2 font-(family-name:--font-press-start-2p) text-[8px] border-2 rounded-none transition-all cursor-pointer ${activeCategory === cat ? "bg-green-500 text-black border-green-400" : "bg-card text-muted-foreground border-border hover:border-green-500/50"}`}
                   >
                     <Tag className="size-2.5" />{categoryConfig[cat].label}
                   </button>
@@ -133,14 +133,14 @@ export default function BlogPage() {
                   </div>
                 ) : (
                   <div className="text-center py-20 text-muted-foreground">
-                    <p className="font-[family-name:var(--font-press-start-2p)] text-xs">Tidak ada artikel yang cocok...</p>
+                    <p className="font-(family-name:--font-press-start-2p) text-xs">Tidak ada artikel yang cocok...</p>
                   </div>
                 )}
               </motion.div>
             </AnimatePresence>
           </div>
         </section>
-        <footer className="w-full py-10 px-4 bg-card/80 backdrop-blur-sm border-t border-border text-center font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground">
+        <footer className="w-full py-10 px-4 bg-card/80 backdrop-blur-sm border-t border-border text-center font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground">
           <p>© {new Date().getFullYear()} TECHMATE. ALL RIGHTS RESERVED.</p>
         </footer>
       </div>

@@ -54,7 +54,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)] transition-colors duration-300"
+            className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-(family-name:--font-press-start-2p) transition-colors duration-300"
           >
             Level 2: Pilih Squad Lo
           </motion.span>
@@ -64,7 +64,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-2xl md:text-4xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-foreground mb-6 uppercase tracking-wide"
+            className="text-2xl md:text-4xl font-bold font-(family-name:--font-press-start-2p) leading-tight text-foreground mb-6 uppercase tracking-wide"
           >
             PILIH JOB KELAS LO
           </motion.h2>

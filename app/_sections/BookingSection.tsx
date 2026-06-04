@@ -45,7 +45,7 @@ Pesan: ${form.message || "-"}`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)]"
+            className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-(family-name:--font-press-start-2p)"
           >
             Level 8: Form Bergabung
           </motion.span>
@@ -55,7 +55,7 @@ Pesan: ${form.message || "-"}`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-2xl md:text-4xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-foreground mb-6 uppercase tracking-wide"
+            className="text-2xl md:text-4xl font-bold font-(family-name:--font-press-start-2p) leading-tight text-foreground mb-6 uppercase tracking-wide"
           >
             BOOKING KONSULTASI
           </motion.h2>
@@ -98,7 +98,7 @@ Pesan: ${form.message || "-"}`;
                 <div className="absolute bottom-[-2px] right-[-2px] w-1.5 h-1.5 bg-background" />
                 <div className="shrink-0 mt-0.5">{item.icon}</div>
                 <div>
-                  <p className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-foreground mb-1">{item.title}</p>
+                  <p className="font-(family-name:--font-press-start-2p) text-[8px] text-foreground mb-1">{item.title}</p>
                   <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
@@ -115,19 +115,19 @@ Pesan: ${form.message || "-"}`;
               {submitted ? (
                 <div className="flex flex-col items-center text-center py-8 gap-4">
                   <span className="text-5xl">🎉</span>
-                  <p className="font-[family-name:var(--font-press-start-2p)] text-xs text-green-400">WA SUDAH TERBUKA!</p>
+                  <p className="font-(family-name:--font-press-start-2p) text-xs text-green-400">WA SUDAH TERBUKA!</p>
                   <p className="text-sm text-muted-foreground max-w-xs">Kalau WA gak terbuka otomatis, klik tombol di bawah ini.</p>
                   <a
                     href={`https://wa.me/${WA_NUM}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-2.5 bg-green-600 hover:bg-green-500 text-black font-[family-name:var(--font-press-start-2p)] text-[9px] font-bold border-2 border-green-400 rounded-none transition-colors"
+                    className="px-5 py-2.5 bg-green-600 hover:bg-green-500 text-black font-(family-name:--font-press-start-2p) text-[9px] font-bold border-2 border-green-400 rounded-none transition-colors"
                   >
                     BUKA WHATSAPP →
                   </a>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="text-[8px] font-[family-name:var(--font-press-start-2p)] text-muted-foreground hover:text-foreground transition-colors cursor-pointer mt-2"
+                    className="text-[8px] font-(family-name:--font-press-start-2p) text-muted-foreground hover:text-foreground transition-colors cursor-pointer mt-2"
                   >
                     ↩ KIRIM LAGI
                   </button>
@@ -135,7 +135,7 @@ Pesan: ${form.message || "-"}`;
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground flex items-center gap-1.5">
+                    <label className="font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground flex items-center gap-1.5">
                       <User className="size-3" /> NAMA
                     </label>
                     <input
@@ -149,7 +149,7 @@ Pesan: ${form.message || "-"}`;
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground flex items-center gap-1.5">
+                    <label className="font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground flex items-center gap-1.5">
                       <Mail className="size-3" /> EMAIL
                     </label>
                     <input
@@ -163,7 +163,7 @@ Pesan: ${form.message || "-"}`;
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground flex items-center gap-1.5">
+                    <label className="font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground flex items-center gap-1.5">
                       <Briefcase className="size-3" /> LAYANAN YANG DIMINATI
                     </label>
                     <select
@@ -179,7 +179,7 @@ Pesan: ${form.message || "-"}`;
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-muted-foreground flex items-center gap-1.5">
+                    <label className="font-(family-name:--font-press-start-2p) text-[8px] text-muted-foreground flex items-center gap-1.5">
                       <MessageSquare className="size-3" /> CERITAIN KEBUTUHANMU
                     </label>
                     <textarea
@@ -193,7 +193,7 @@ Pesan: ${form.message || "-"}`;
 
                   <button
                     type="submit"
-                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-green-600 hover:bg-green-500 text-black font-[family-name:var(--font-press-start-2p)] text-[9px] font-bold border-2 border-green-400 shadow-[4px_4px_0_0_rgba(74,222,128,0.4)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(74,222,128,0.4)] transition-all rounded-none cursor-pointer"
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-green-600 hover:bg-green-500 text-black font-(family-name:--font-press-start-2p) text-[9px] font-bold border-2 border-green-400 shadow-[4px_4px_0_0_rgba(74,222,128,0.4)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(74,222,128,0.4)] transition-all rounded-none cursor-pointer"
                   >
                     KIRIM & BUKA WHATSAPP
                     <ChevronRight className="size-4" />

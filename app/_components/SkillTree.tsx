@@ -87,7 +87,7 @@ export default function SkillTree({ paths, colorTheme = "green" }: SkillTreeProp
   return (
     <div className="w-full">
       
-      <div className="flex justify-center gap-6 mb-8 text-[8px] md:text-[9px] font-[family-name:var(--font-press-start-2p)] tracking-wider text-muted-foreground">
+      <div className="flex justify-center gap-6 mb-8 text-[8px] md:text-[9px] font-(family-name:--font-press-start-2p) tracking-wider text-muted-foreground">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 bg-card border-2 border-border" />
           <span>LOCKED</span>
@@ -108,7 +108,7 @@ export default function SkillTree({ paths, colorTheme = "green" }: SkillTreeProp
           <div key={pathIdx} className="flex flex-col items-center">
             
             <div className="text-center mb-6 w-full py-2 bg-zinc-900/50 border border-border px-4">
-              <h4 className={`font-[family-name:var(--font-press-start-2p)] text-[9px] md:text-[10px] uppercase font-bold tracking-wider ${theme.text}`}>
+              <h4 className={`font-(family-name:--font-press-start-2p) text-[9px] md:text-[10px] uppercase font-bold tracking-wider ${theme.text}`}>
                 {path.title}
               </h4>
               <p className="text-[11px] text-muted-foreground mt-1 font-sans">
@@ -160,12 +160,12 @@ export default function SkillTree({ paths, colorTheme = "green" }: SkillTreeProp
                         </div>
 
                         
-                        <span className={`font-[family-name:var(--font-press-start-2p)] text-[8px] md:text-[9px] block leading-tight ${nodeText} tracking-wider font-bold mb-1 min-h-[16px]`}>
+                        <span className={`font-(family-name:--font-press-start-2p) text-[8px] md:text-[9px] block leading-tight ${nodeText} tracking-wider font-bold mb-1 min-h-[16px]`}>
                           {skill.name}
                         </span>
 
                         
-                        <span className={`font-[family-name:var(--font-press-start-2p)] text-[7px] block tracking-widest ${isLocked ? "text-zinc-700" : isMaxed ? theme.text : "text-muted-foreground"}`}>
+                        <span className={`font-(family-name:--font-press-start-2p) text-[7px] block tracking-widest ${isLocked ? "text-zinc-700" : isMaxed ? theme.text : "text-muted-foreground"}`}>
                           {skill.level}
                         </span>
                       </motion.div>
@@ -179,7 +179,7 @@ export default function SkillTree({ paths, colorTheme = "green" }: SkillTreeProp
                           <div className="absolute bottom-[-2px] left-[-2px] w-1 h-1 bg-background z-30" />
                           <div className="absolute bottom-[-2px] right-[-2px] w-1 h-1 bg-background z-30" />
                           
-                          <p className={`font-[family-name:var(--font-press-start-2p)] text-[8px] ${theme.text} mb-1.5 uppercase font-bold tracking-wider`}>
+                          <p className={`font-(family-name:--font-press-start-2p) text-[8px] ${theme.text} mb-1.5 uppercase font-bold tracking-wider`}>
                             {skill.name}
                           </p>
                           <p className="text-xs text-muted-foreground font-sans leading-relaxed">

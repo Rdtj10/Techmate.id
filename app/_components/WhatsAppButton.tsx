@@ -21,7 +21,7 @@ export default function WhatsAppButton() {
             <div className="absolute top-[-2px] right-[-2px] w-1.5 h-1.5 bg-background" />
             <div className="absolute bottom-[-2px] left-[-2px] w-1.5 h-1.5 bg-background" />
             <div className="absolute bottom-[-2px] right-[-2px] w-1.5 h-1.5 bg-background" />
-            <p className="font-[family-name:var(--font-press-start-2p)] text-[8px] text-green-400 whitespace-nowrap">
+            <p className="font-(family-name:--font-press-start-2p) text-[8px] text-green-400 whitespace-nowrap">
               Chat Kami!
             </p>
           </motion.div>
