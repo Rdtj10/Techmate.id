@@ -4,8 +4,10 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Swords, ChevronDown, Sun, Moon } from "lucide-react";
+import { Menu, X, ChevronDown, Sun, Moon } from "lucide-react";
 import dynamic from "next/dynamic";
+
+import Logo from "./Logo";
 
 const EasterEgg = dynamic(() => import("./EasterEgg"), { ssr: false });
 
@@ -123,9 +125,7 @@ export default function NavBar() {
               onClick={handleLogoClick}
               className="flex items-center gap-2 group cursor-pointer bg-transparent border-none p-0"
             >
-              <div className="w-8 h-8 bg-green-500/10 border-2 border-green-500 flex items-center justify-center">
-                <Swords className="size-4 text-green-400" />
-              </div>
+              <Logo size="sm" />
               <span className="font-(family-name:--font-press-start-2p) text-[10px] md:text-xs text-foreground group-hover:text-green-400 transition-colors tracking-wider">
                 TECHMATE
               </span>

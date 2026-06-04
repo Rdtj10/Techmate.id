@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Swords, Send, Check } from "lucide-react";
+import { Send, Check } from "lucide-react";
+import Logo from "./Logo";
 
 export default function NewsletterFooter() {
   const [email, setEmail] = useState("");
@@ -21,11 +22,9 @@ export default function NewsletterFooter() {
       <div className="container mx-auto max-w-6xl px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 border-b border-border pb-10">
           <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-green-500/10 border-2 border-green-500 flex items-center justify-center">
-                <Swords className="size-4 text-green-400" />
-              </div>
-              <span className="font-(family-name:--font-press-start-2p) text-[10px] text-foreground">TECHMATE</span>
+            <div className="flex items-center gap-2 group">
+              <Logo size="sm" />
+              <span className="font-(family-name:--font-press-start-2p) text-[10px] text-foreground group-hover:text-green-400 transition-colors">TECHMATE</span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
               Tim teknologi yang siap bantu bisnis dan individu menang di dunia digital. Software, hardware, dan IT consultation.
