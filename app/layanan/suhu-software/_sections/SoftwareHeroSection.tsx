@@ -5,8 +5,8 @@ import DialogueBox from "@/app/_components/DialogueBox";
 
 export default function SoftwareHeroSection() {
   return (
-    <section className="relative w-full pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-black text-white">
-      {/* Grid Pattern Background */}
+    <section className="relative w-full pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-background text-foreground">
+      
       <div
         className="absolute inset-0 z-0 opacity-15 pointer-events-none"
         style={{
@@ -17,9 +17,9 @@ export default function SoftwareHeroSection() {
       />
 
       <div className="container relative z-10 mx-auto max-w-5xl px-4">
-        {/* Breadcrumb / Level Info */}
+        
         <div className="flex flex-wrap justify-between items-center gap-3 mb-8">
-          <div className="flex items-center gap-2 font-[family-name:var(--font-press-start-2p)] text-[8px] md:text-[9px] text-zinc-500">
+          <div className="flex items-center gap-2 font-[family-name:var(--font-press-start-2p)] text-[8px] md:text-[9px] text-muted-foreground">
             <span>LAYANAN</span>
             <span>&gt;</span>
             <span className="text-green-400">SUHU-SOFTWARE</span>
@@ -30,7 +30,7 @@ export default function SoftwareHeroSection() {
           </div>
         </div>
 
-        {/* Title and Intro */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             <h1
@@ -39,36 +39,36 @@ export default function SoftwareHeroSection() {
             >
               SIHIR SOFTWARE
             </h1>
-            <p className="text-zinc-400 text-base md:text-lg mb-8 leading-relaxed font-sans">
+            <p className="text-muted-foreground text-base md:text-lg mb-8 leading-relaxed font-sans">
               Bikin web impian lo, aplikasi mobile kece, atau sistem backend tangguh yang anti-lelet dan tahan banting. Kita racik kode terbaik pake tech-stack paling update biar bisnis lo makin melaju kencang tanpa hambatan!
             </p>
             <div className="flex flex-wrap gap-4 font-[family-name:var(--font-press-start-2p)] text-[8px] md:text-[9px]">
-              <span className="px-3 py-2 bg-zinc-900 border-2 border-zinc-800 text-zinc-300">
+              <span className="px-3 py-2 bg-background border-2 border-border text-muted-foreground">
                 ⚡ FAST LOAD
               </span>
-              <span className="px-3 py-2 bg-zinc-900 border-2 border-zinc-800 text-zinc-300">
+              <span className="px-3 py-2 bg-background border-2 border-border text-muted-foreground">
                 🛡️ SOLID SECURITY
               </span>
-              <span className="px-3 py-2 bg-zinc-900 border-2 border-zinc-800 text-zinc-300">
+              <span className="px-3 py-2 bg-background border-2 border-border text-muted-foreground">
                 📱 MOBILE FIRST
               </span>
             </div>
           </div>
 
-          {/* Code Sandbox Mockup */}
+          
           <div className="lg:col-span-5 relative w-full">
-            <div className="w-full bg-zinc-950 border-4 border-zinc-800 p-4 relative font-mono text-xs text-zinc-400 shadow-[8px_8px_0_0_rgba(255,255,255,0.03)]">
-              {/* Pixel corners */}
-              <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-black z-10" />
-              <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-black z-10" />
-              <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-black z-10" />
-              <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-black z-10" />
+            <div className="w-full bg-card border-4 border-border p-4 relative font-mono text-xs text-muted-foreground shadow-[8px_8px_0_0_rgba(255,255,255,0.03)]">
+              
+              <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-background z-10" />
+              <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-background z-10" />
+              <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-background z-10" />
+              <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-background z-10" />
 
-              {/* Terminal Title Bar */}
-              <div className="flex items-center justify-between border-b border-zinc-800 pb-2.5 mb-4">
+              
+              <div className="flex items-center justify-between border-b border-border pb-2.5 mb-4">
                 <div className="flex items-center gap-1.5">
                   <Terminal className="size-3.5 text-green-400" />
-                  <span className="text-[9px] font-[family-name:var(--font-press-start-2p)] text-zinc-500 tracking-wider">
+                  <span className="text-[9px] font-[family-name:var(--font-press-start-2p)] text-muted-foreground tracking-wider">
                     techmate_wizard.js
                   </span>
                 </div>
@@ -79,7 +79,7 @@ export default function SoftwareHeroSection() {
                 </div>
               </div>
 
-              {/* Code display */}
+              
               <div className="space-y-1.5 text-[11px] leading-relaxed">
                 <p className="text-zinc-600">{"// Summoning ultimate software magic"}</p>
                 <p>
@@ -119,7 +119,7 @@ export default function SoftwareHeroSection() {
           </div>
         </div>
 
-        {/* Dialogue Box Section */}
+        
         <div className="mt-8">
           <DialogueBox
             speakerName="SUHU SOFTWARE"

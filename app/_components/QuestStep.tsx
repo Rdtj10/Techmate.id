@@ -5,11 +5,11 @@ import { type LucideIcon } from "lucide-react";
 import * as Icons from "lucide-react";
 
 interface QuestStepProps {
-  stepNumber: string; // e.g. "01"
-  questName: string; // e.g. "Gather Requirements"
-  objective: string; // e.g. "Collect client brief & target goals"
-  duration: string; // e.g. "1-2 Days"
-  reward: string; // e.g. "System Architecture Map"
+  stepNumber: string; 
+  questName: string; 
+  objective: string; 
+  duration: string; 
+  reward: string; 
   status: "completed" | "active" | "locked";
   iconName: keyof typeof Icons;
 }
@@ -43,11 +43,11 @@ export default function QuestStep({
       lineColor: "bg-blue-500",
     },
     locked: {
-      border: "border-zinc-800",
+      border: "border-border",
       text: "text-zinc-600",
       statusText: "TERKUNCI",
-      statusBadge: "bg-zinc-900 text-zinc-500 border-zinc-800",
-      iconBg: "bg-zinc-950",
+      statusBadge: "bg-background text-muted-foreground border-border",
+      iconBg: "bg-card",
       lineColor: "bg-zinc-800",
     },
   };
@@ -56,34 +56,34 @@ export default function QuestStep({
 
   return (
     <div className="relative flex flex-col md:flex-row gap-6 items-start group">
-      {/* Side Icon & Number Badge */}
+      
       <div className="flex md:flex-col items-center gap-3 shrink-0 self-stretch md:self-auto relative">
-        <div className={`w-14 h-14 bg-zinc-950 border-4 ${config.border} flex items-center justify-center p-2 rounded-none relative z-10 transition-all group-hover:scale-105`}>
-          <div className={`w-full h-full ${config.iconBg} flex items-center justify-center border border-zinc-800`}>
+        <div className={`w-14 h-14 bg-card border-4 ${config.border} flex items-center justify-center p-2 rounded-none relative z-10 transition-all group-hover:scale-105`}>
+          <div className={`w-full h-full ${config.iconBg} flex items-center justify-center border border-border`}>
             <IconComponent className={`size-6 ${config.text}`} />
           </div>
         </div>
 
-        {/* Quest Number indicator */}
-        <div className="font-[family-name:var(--font-press-start-2p)] text-center text-[10px] bg-zinc-900 border-2 border-zinc-800 text-white px-2 py-1 rounded-none z-10">
+        
+        <div className="font-[family-name:var(--font-press-start-2p)] text-center text-[10px] bg-background border-2 border-border text-foreground px-2 py-1 rounded-none z-10">
           Q-{stepNumber}
         </div>
       </div>
 
-      {/* Quest Details Panel */}
+      
       <motion.div
         whileHover={{ x: status !== "locked" ? 4 : 0 }}
-        className={`flex-1 w-full bg-zinc-950 border-4 ${config.border} p-5 rounded-none flex flex-col justify-between relative shadow-[4px_4px_0_0_rgba(0,0,0,0.5)]`}
+        className={`flex-1 w-full bg-card border-4 ${config.border} p-5 rounded-none flex flex-col justify-between relative shadow-[4px_4px_0_0_rgba(0,0,0,0.5)]`}
       >
-        {/* Pixel Corners */}
-        <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-black z-10" />
-        <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-black z-10" />
-        <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-black z-10" />
-        <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-black z-10" />
+        
+        <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-background z-10" />
+        <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-background z-10" />
+        <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-background z-10" />
+        <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-background z-10" />
 
-        {/* Quest Name and Status */}
+        
         <div className="flex justify-between items-start gap-4 mb-3">
-          <h4 className={`text-base font-bold font-[family-name:var(--font-press-start-2p)] leading-tight ${status === "locked" ? "text-zinc-500" : "text-white"}`}>
+          <h4 className={`text-base font-bold font-[family-name:var(--font-press-start-2p)] leading-tight ${status === "locked" ? "text-muted-foreground" : "text-foreground"}`}>
             {questName}
           </h4>
           <span className={`px-2 py-0.5 text-[8px] font-bold border-2 rounded-none font-[family-name:var(--font-press-start-2p)] shrink-0 ${config.statusBadge}`}>
@@ -91,16 +91,16 @@ export default function QuestStep({
           </span>
         </div>
 
-        {/* Objective */}
-        <p className={`text-xs md:text-sm mb-4 leading-relaxed ${status === "locked" ? "text-zinc-600" : "text-zinc-400"}`}>
-          <span className="font-semibold text-zinc-300 mr-1">{`>`} Target Misi:</span> {objective}
+        
+        <p className={`text-xs md:text-sm mb-4 leading-relaxed ${status === "locked" ? "text-zinc-600" : "text-muted-foreground"}`}>
+          <span className="font-semibold text-muted-foreground mr-1">{`>`} Target Misi:</span> {objective}
         </p>
 
-        {/* Quest Meta: EXP, Reward, Time */}
-        <div className="grid grid-cols-2 gap-2 pt-3 border-t border-zinc-900 text-[8px] font-[family-name:var(--font-press-start-2p)]">
+        
+        <div className="grid grid-cols-2 gap-2 pt-3 border-t border-border text-[8px] font-[family-name:var(--font-press-start-2p)]">
           <div className="flex flex-col gap-1">
             <span className="text-zinc-600 uppercase">WAKTU MISI</span>
-            <span className={status === "locked" ? "text-zinc-600" : "text-zinc-300"}>{duration}</span>
+            <span className={status === "locked" ? "text-zinc-600" : "text-muted-foreground"}>{duration}</span>
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-zinc-600 uppercase">BONUS CLEAR</span>

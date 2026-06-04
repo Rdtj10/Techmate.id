@@ -9,17 +9,17 @@ export const metadata: Metadata = {
 
 export default function SquadPage() {
   return (
-    <main className="flex min-h-screen flex-col bg-black overflow-x-hidden pt-16">
-      {/* Squad Hero Section */}
+    <main className="flex min-h-screen flex-col bg-background transition-colors duration-300 overflow-x-hidden pt-16">
+      
       <SquadHeroSection />
 
-      {/* Interactive Squad Character Selection Section */}
+      
       <SquadSelectionSection />
 
-      {/* Footer */}
-      <footer className="w-full py-12 px-4 bg-black border-t border-zinc-900 text-center font-[family-name:var(--font-press-start-2p)] text-[8px] md:text-[9px] text-zinc-600 tracking-wider">
+      
+      <footer className="w-full py-12 px-4 bg-card border-t border-border text-center font-[family-name:var(--font-press-start-2p)] text-[8px] md:text-[9px] text-muted-foreground tracking-wider transition-colors duration-300">
         <div className="container mx-auto max-w-4xl flex flex-col items-center gap-4">
-          <p className="text-zinc-700">
+          <p className="text-muted-foreground/60">
             © {new Date().getFullYear()} TECHMATE. ALL RIGHTS RESERVED. CHOOSE YOUR HERO.
           </p>
         </div>

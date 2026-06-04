@@ -44,24 +44,17 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="relative w-full py-20 px-4 bg-zinc-950 text-white overflow-hidden border-t border-zinc-900">
-      {/* Background Decorative Neon Grid Lines */}
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none"
-           style={{
-             backgroundImage: "linear-gradient(#4b5563 1px, transparent 1px), linear-gradient(90deg, #4b5563 1px, transparent 1px)",
-             backgroundSize: "80px 80px"
-           }}
-      />
+    <section className="relative w-full py-20 px-4 bg-background/70 backdrop-blur-sm text-foreground overflow-hidden border-t border-border transition-colors duration-300">
 
       <div className="container relative z-10 mx-auto max-w-6xl">
-        {/* Section Header */}
+        
         <div className="flex flex-col items-center text-center mb-16">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="px-3 py-1 bg-zinc-900 border-2 border-zinc-800 text-zinc-400 text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)]"
+            className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)] transition-colors duration-300"
           >
             Level 2: Pilih Squad Lo
           </motion.span>
@@ -71,7 +64,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-2xl md:text-4xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-white mb-6 uppercase tracking-wide"
+            className="text-2xl md:text-4xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-foreground mb-6 uppercase tracking-wide"
           >
             PILIH JOB KELAS LO
           </motion.h2>
@@ -81,13 +74,13 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="max-w-2xl text-sm md:text-base text-zinc-400"
+            className="max-w-2xl text-sm md:text-base text-muted-foreground"
           >
             Pilih peran sepuh yang lo butuhin buat kelarin masalah teknologi lo. Tiap job punya skill op (overpowered) buat libas tuntas semua eror!
           </motion.p>
         </div>
 
-        {/* Grid Service Cards */}
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {services.map((service, index) => (
             <motion.div

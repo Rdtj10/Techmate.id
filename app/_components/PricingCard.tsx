@@ -10,16 +10,16 @@ interface PricingFeature {
 }
 
 interface PricingCardProps {
-  tier: string; // e.g. "STARTER", "PRO", "EPIC"
-  price: string; // e.g. "Rp 500K" or "Hubungi Kami"
-  priceNote?: string; // e.g. "/ proyek"
+  tier: string; 
+  price: string; 
+  priceNote?: string; 
   description: string;
   features: PricingFeature[];
   ctaLabel: string;
   ctaHref: string;
   isPopular?: boolean;
   colorTheme?: "green" | "blue" | "amber" | "purple";
-  badgeLabel?: string; // e.g. "BEST VALUE", "MOST POPULAR"
+  badgeLabel?: string; 
 }
 
 export default function PricingCard({
@@ -36,7 +36,7 @@ export default function PricingCard({
 }: PricingCardProps) {
   const themes = {
     green: {
-      border: isPopular ? "border-green-500" : "border-zinc-800",
+      border: isPopular ? "border-green-500" : "border-border",
       text: "text-green-400",
       bg: "bg-green-500/10",
       badge: "bg-green-500 text-black border-green-400",
@@ -44,7 +44,7 @@ export default function PricingCard({
       glow: isPopular ? "shadow-[6px_6px_0_0_rgba(34,197,94,0.25)]" : "shadow-[4px_4px_0_0_rgba(255,255,255,0.03)]",
     },
     blue: {
-      border: isPopular ? "border-blue-500" : "border-zinc-800",
+      border: isPopular ? "border-blue-500" : "border-border",
       text: "text-blue-400",
       bg: "bg-blue-500/10",
       badge: "bg-blue-500 text-black border-blue-400",
@@ -52,7 +52,7 @@ export default function PricingCard({
       glow: isPopular ? "shadow-[6px_6px_0_0_rgba(59,130,246,0.25)]" : "shadow-[4px_4px_0_0_rgba(255,255,255,0.03)]",
     },
     amber: {
-      border: isPopular ? "border-amber-500" : "border-zinc-800",
+      border: isPopular ? "border-amber-500" : "border-border",
       text: "text-amber-400",
       bg: "bg-amber-500/10",
       badge: "bg-amber-500 text-black border-amber-400",
@@ -60,7 +60,7 @@ export default function PricingCard({
       glow: isPopular ? "shadow-[6px_6px_0_0_rgba(245,158,11,0.25)]" : "shadow-[4px_4px_0_0_rgba(255,255,255,0.03)]",
     },
     purple: {
-      border: isPopular ? "border-purple-500" : "border-zinc-800",
+      border: isPopular ? "border-purple-500" : "border-border",
       text: "text-purple-400",
       bg: "bg-purple-500/10",
       badge: "bg-purple-500 text-black border-purple-400",
@@ -75,15 +75,15 @@ export default function PricingCard({
     <motion.div
       whileHover={{ y: -4, x: -2 }}
       transition={{ duration: 0.15 }}
-      className={`relative w-full bg-zinc-950 border-4 ${theme.border} p-6 flex flex-col rounded-none ${theme.glow}`}
+      className={`relative w-full bg-card border-4 ${theme.border} p-6 flex flex-col rounded-none ${theme.glow}`}
     >
-      {/* Pixel corners */}
-      <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-black z-10" />
-      <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-black z-10" />
-      <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-black z-10" />
-      <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-black z-10" />
+      
+      <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-background z-10" />
+      <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-background z-10" />
+      <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-background z-10" />
+      <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-background z-10" />
 
-      {/* Popular Badge */}
+      
       {(isPopular || badgeLabel) && (
         <div className="absolute top-[-18px] left-1/2 -translate-x-1/2 z-20">
           <span
@@ -95,34 +95,34 @@ export default function PricingCard({
         </div>
       )}
 
-      {/* Tier Name */}
+      
       <div className="mb-4">
         <span
           className={`font-[family-name:var(--font-press-start-2p)] text-[9px] tracking-widest uppercase ${theme.text}`}
         >
           PAKET
         </span>
-        <h3 className="font-[family-name:var(--font-press-start-2p)] text-sm md:text-base font-bold text-white mt-1 uppercase tracking-wide">
+        <h3 className="font-[family-name:var(--font-press-start-2p)] text-sm md:text-base font-bold text-foreground mt-1 uppercase tracking-wide">
           {tier}
         </h3>
       </div>
 
-      {/* Price */}
+      
       <div className={`p-4 ${theme.bg} border-2 ${theme.border} mb-5 rounded-none`}>
         <p className={`font-[family-name:var(--font-press-start-2p)] text-xl md:text-2xl font-bold ${theme.text} leading-tight`}>
           {price}
         </p>
         {priceNote && (
-          <span className="text-[8px] font-[family-name:var(--font-press-start-2p)] text-zinc-500 mt-1 block">
+          <span className="text-[8px] font-[family-name:var(--font-press-start-2p)] text-muted-foreground mt-1 block">
             {priceNote}
           </span>
         )}
-        <p className="text-xs text-zinc-400 mt-2 leading-relaxed font-sans">
+        <p className="text-xs text-muted-foreground mt-2 leading-relaxed font-sans">
           {description}
         </p>
       </div>
 
-      {/* Features List */}
+      
       <ul className="flex flex-col gap-2.5 mb-6 flex-1">
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-3 text-xs">
@@ -133,14 +133,14 @@ export default function PricingCard({
                 <X className="size-3.5 text-zinc-700" />
               )}
             </span>
-            <span className={feature.included ? "text-zinc-300" : "text-zinc-600 line-through"}>
+            <span className={feature.included ? "text-muted-foreground" : "text-zinc-600 line-through"}>
               {feature.text}
             </span>
           </li>
         ))}
       </ul>
 
-      {/* CTA Button */}
+      
       <Link
         href={ctaHref}
         target={ctaHref.startsWith("http") ? "_blank" : undefined}

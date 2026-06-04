@@ -6,10 +6,10 @@ import * as Icons from "lucide-react";
 
 interface DialogueBoxProps {
   speakerName: string;
-  speakerTitle: string; // e.g. "Lead Developer", "Client / Gamer"
+  speakerTitle: string; 
   dialogueText: string;
   avatarIcon?: keyof typeof Icons;
-  reputationBuff?: string; // e.g. "+5 REP"
+  reputationBuff?: string; 
   colorTheme?: "green" | "blue" | "purple" | "amber";
 }
 
@@ -57,49 +57,49 @@ export default function DialogueBox({
   const currentTheme = themes[colorTheme] || themes.green;
 
   return (
-    <div className={`relative w-full bg-zinc-950 border-4 ${currentTheme.border} p-5 md:p-6 rounded-none flex flex-col md:flex-row gap-5 shadow-[4px_4px_0_0_rgba(255,255,255,0.05)]`}>
-      {/* Corner retro pixels */}
-      <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-black z-10" />
-      <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-black z-10" />
-      <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-black z-10" />
-      <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-black z-10" />
+    <div className={`relative w-full bg-card border-4 ${currentTheme.border} p-5 md:p-6 rounded-none flex flex-col md:flex-row gap-5 shadow-[4px_4px_0_0_rgba(255,255,255,0.05)]`}>
+      
+      <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-background z-10" />
+      <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-background z-10" />
+      <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-background z-10" />
+      <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-background z-10" />
 
-      {/* Speaker Name Tag / Badge */}
+      
       <div className="absolute top-[-20px] left-4 flex gap-2 z-10 font-[family-name:var(--font-press-start-2p)]">
         <span className={`px-3 py-1 text-[8px] md:text-[9px] font-bold border-2 rounded-none ${currentTheme.headerBg}`}>
           {speakerName}
         </span>
         {reputationBuff && (
-          <span className="px-2 py-1 text-[8px] md:text-[9px] font-bold border-2 border-zinc-800 bg-zinc-900 text-zinc-300 rounded-none">
+          <span className="px-2 py-1 text-[8px] md:text-[9px] font-bold border-2 border-border bg-background text-muted-foreground rounded-none">
             {reputationBuff}
           </span>
         )}
       </div>
 
-      {/* Avatar Section */}
+      
       <div className="flex flex-col items-center shrink-0 mt-2">
-        <div className="w-16 h-16 bg-zinc-900 border-2 border-zinc-800 rounded-none flex items-center justify-center p-2 relative">
-          <div className={`w-full h-full ${currentTheme.bgText} flex items-center justify-center border border-zinc-800`}>
+        <div className="w-16 h-16 bg-background border-2 border-border rounded-none flex items-center justify-center p-2 relative">
+          <div className={`w-full h-full ${currentTheme.bgText} flex items-center justify-center border border-border`}>
             <IconComponent className={`size-8 ${currentTheme.text}`} />
           </div>
-          {/* Active Player Light */}
+          
           <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-green-500 border border-black rounded-full" />
         </div>
-        <span className="mt-2 text-[9px] font-[family-name:var(--font-press-start-2p)] text-zinc-500 uppercase tracking-wider text-center max-w-[80px]">
+        <span className="mt-2 text-[9px] font-[family-name:var(--font-press-start-2p)] text-muted-foreground uppercase tracking-wider text-center max-w-[80px]">
           {speakerTitle}
         </span>
       </div>
 
-      {/* Speech Box */}
+      
       <div className="flex-1 flex flex-col justify-between mt-2">
         <div className="relative">
-          {/* Retro text dialog */}
-          <p className="text-sm md:text-base text-zinc-300 font-mono leading-relaxed mb-4">
+          
+          <p className="text-sm md:text-base text-muted-foreground font-mono leading-relaxed mb-4">
             &ldquo;{dialogueText}&rdquo;
           </p>
         </div>
 
-        {/* Flashing "Next Dialog" cursor indicators */}
+        
         <div className="flex justify-between items-center text-[8px] font-[family-name:var(--font-press-start-2p)] text-zinc-600">
           <span>[ CHAT BERES ]</span>
           <motion.div

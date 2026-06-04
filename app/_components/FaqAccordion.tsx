@@ -33,15 +33,15 @@ export default function FaqAccordion({ items, colorTheme = "green" }: FaqAccordi
         return (
           <div
             key={index}
-            className={`relative bg-zinc-950 border-4 ${isOpen ? theme.border : "border-zinc-800"} rounded-none transition-colors duration-200`}
+            className={`relative bg-card border-4 ${isOpen ? theme.border : "border-border"} rounded-none transition-colors duration-200`}
           >
-            {/* Pixel corners */}
-            <div className={`absolute top-[-4px] left-[-4px] w-2 h-2 bg-black z-10`} />
-            <div className={`absolute top-[-4px] right-[-4px] w-2 h-2 bg-black z-10`} />
-            <div className={`absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-black z-10`} />
-            <div className={`absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-black z-10`} />
+            
+            <div className={`absolute top-[-4px] left-[-4px] w-2 h-2 bg-background z-10`} />
+            <div className={`absolute top-[-4px] right-[-4px] w-2 h-2 bg-background z-10`} />
+            <div className={`absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-background z-10`} />
+            <div className={`absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-background z-10`} />
 
-            {/* Question row */}
+            
             <button
               onClick={() => setOpenIndex(isOpen ? null : index)}
               className="w-full flex justify-between items-center gap-4 px-5 py-4 text-left cursor-pointer"
@@ -50,7 +50,7 @@ export default function FaqAccordion({ items, colorTheme = "green" }: FaqAccordi
                 <span className={`font-[family-name:var(--font-press-start-2p)] text-[9px] ${theme.text} shrink-0 mt-0.5`}>
                   Q{String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="font-[family-name:var(--font-press-start-2p)] text-[9px] md:text-[10px] text-white leading-relaxed">
+                <span className="font-[family-name:var(--font-press-start-2p)] text-[9px] md:text-[10px] text-foreground leading-relaxed">
                   {item.question}
                 </span>
               </div>
@@ -59,7 +59,7 @@ export default function FaqAccordion({ items, colorTheme = "green" }: FaqAccordi
               />
             </button>
 
-            {/* Answer */}
+            
             <AnimatePresence>
               {isOpen && (
                 <motion.div
@@ -69,8 +69,8 @@ export default function FaqAccordion({ items, colorTheme = "green" }: FaqAccordi
                   transition={{ duration: 0.2 }}
                   className="overflow-hidden"
                 >
-                  <div className={`px-5 pb-5 pt-0 border-t-2 border-zinc-800 ${theme.bg}`}>
-                    <p className="text-sm text-zinc-400 leading-relaxed mt-3 font-sans">
+                  <div className={`px-5 pb-5 pt-0 border-t-2 border-border ${theme.bg}`}>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-3 font-sans">
                       {item.answer}
                     </p>
                   </div>

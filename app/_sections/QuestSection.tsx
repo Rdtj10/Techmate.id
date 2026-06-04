@@ -35,24 +35,17 @@ export default function QuestSection() {
   ];
 
   return (
-    <section className="relative w-full py-20 px-4 bg-zinc-950 text-white overflow-hidden border-t border-zinc-900">
-      {/* Background Neon Grid Decoration */}
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none"
-           style={{
-             backgroundImage: "linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)",
-             backgroundSize: "60px 60px"
-           }}
-      />
+    <section className="relative w-full py-20 px-4 bg-background/70 backdrop-blur-sm text-foreground overflow-hidden border-t border-border transition-colors duration-300">
 
       <div className="container relative z-10 mx-auto max-w-4xl">
         
-        {/* Section Header */}
+        
         <div className="flex flex-col items-center text-center mb-16">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="px-3 py-1 bg-zinc-900 border-2 border-zinc-800 text-zinc-400 text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)]"
+            className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)] transition-colors duration-300"
           >
             Level 4: Misi Aktif Squad
           </motion.span>
@@ -62,7 +55,7 @@ export default function QuestSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-2xl md:text-4xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-white mb-6 uppercase tracking-wide"
+            className="text-2xl md:text-4xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-foreground mb-6 uppercase tracking-wide"
           >
             PAPAN MISI (CARA KERJA)
           </motion.h2>
@@ -72,17 +65,17 @@ export default function QuestSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="max-w-2xl text-sm md:text-base text-zinc-400"
+            className="max-w-2xl text-sm md:text-base text-muted-foreground"
           >
             Nih langkah petualangan proyek lo bareng kami dari awal sampai kelar. Alur transparan, anti-gimmick!
           </motion.p>
         </div>
 
-        {/* Timeline Quests Steps */}
+        
         <div className="relative flex flex-col gap-12 md:gap-16">
           
-          {/* Vertical Connection Line for timeline */}
-          <div className="absolute left-[26px] md:left-[28px] top-6 bottom-6 w-1 bg-zinc-800 z-0 pointer-events-none" />
+          
+          <div className="absolute left-[26px] md:left-[28px] top-6 bottom-6 w-1 bg-border z-0 pointer-events-none transition-colors duration-300" />
 
           {quests.map((quest, index) => (
             <motion.div

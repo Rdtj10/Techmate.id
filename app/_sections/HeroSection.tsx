@@ -5,13 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-black text-white">
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" 
-           style={{
-             backgroundImage: "linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)",
-             backgroundSize: "40px 40px"
-           }}
-      />
+    <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden text-foreground transition-colors duration-300">
       
       <div className="container relative z-10 mx-auto px-4 flex flex-col items-center text-center">
         <motion.div
@@ -39,9 +33,9 @@ export default function HeroSection() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-2xl text-lg md:text-xl text-zinc-400 mb-10"
+          className="max-w-2xl text-lg md:text-xl text-muted-foreground mb-10"
         >
-          Solusi gercep buat segala keribetan teknologi lo. Dari bikin <span className="text-white font-semibold">Software Mobile & Web</span> kece badai, sampai benerin dan rakit <span className="text-white font-semibold">PC/Laptop (Hardware)</span> sekarat. No debat!
+          Solusi gercep buat segala keribetan teknologi lo. Dari bikin <span className="text-foreground font-semibold">Software Mobile & Web</span> kece badai, sampai benerin dan rakit <span className="text-foreground font-semibold">PC/Laptop (Hardware)</span> sekarat. No debat!
         </motion.p>
 
         <motion.div
@@ -67,7 +61,7 @@ export default function HeroSection() {
               const element = document.getElementById("quests");
               if (element) element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="h-14 px-8 rounded-none border-2 border-zinc-600 text-zinc-300 font-bold font-[family-name:var(--font-press-start-2p)] text-xs md:text-sm hover:bg-zinc-800 hover:text-white transition-all cursor-pointer"
+            className="h-14 px-8 rounded-none border-2 border-border text-foreground font-bold font-[family-name:var(--font-press-start-2p)] text-xs md:text-sm hover:bg-zinc-100 dark:hover:bg-background transition-all cursor-pointer"
           >
             CARA MABAR
           </Button>

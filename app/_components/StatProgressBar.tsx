@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 
 interface StatProgressBarProps {
   label: string;
-  value: number; // 0 to 100
+  value: number; 
   colorTheme?: "green" | "blue" | "purple" | "amber";
-  statBuffText?: string; // e.g. "+95% BUFF"
+  statBuffText?: string; 
 }
 
 export default function StatProgressBar({
@@ -19,7 +19,7 @@ export default function StatProgressBar({
   const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
-    // Animate local value up to target value
+    
     const timer = setTimeout(() => {
       setDisplayValue(value);
     }, 200);
@@ -55,28 +55,28 @@ export default function StatProgressBar({
 
   const currentTheme = themes[colorTheme] || themes.green;
 
-  // Generate segment blocks for pixel art progress bar
+  
   const totalBlocks = 20;
   const activeBlocksCount = Math.round((displayValue / 100) * totalBlocks);
 
   return (
     <div className="w-full mb-6 font-[family-name:var(--font-press-start-2p)]">
-      {/* Label and Percentage */}
+      
       <div className="flex justify-between items-center mb-2.5 text-[9px] md:text-xs">
-        <span className="text-white tracking-wider">{label}</span>
+        <span className="text-foreground tracking-wider">{label}</span>
         <div className="flex items-center gap-2">
           {statBuffText && (
-            <span className={`text-[8px] px-1 py-0.5 bg-zinc-900 border border-zinc-800 font-bold ${currentTheme.text}`}>
+            <span className={`text-[8px] px-1 py-0.5 bg-background border border-border font-bold ${currentTheme.text}`}>
               {statBuffText}
             </span>
           )}
-          <span className="text-zinc-300 font-bold">{value}%</span>
+          <span className="text-muted-foreground font-bold">{value}%</span>
         </div>
       </div>
 
-      {/* The Segmented Pixel Progress Bar */}
-      <div className="relative w-full h-8 bg-zinc-950 border-4 border-zinc-800 p-1 flex items-center gap-0.5 rounded-none overflow-hidden">
-        {/* Render segmented pixel blocks */}
+      
+      <div className="relative w-full h-8 bg-card border-4 border-border p-1 flex items-center gap-0.5 rounded-none overflow-hidden">
+        
         {Array.from({ length: totalBlocks }).map((_, index) => {
           const isActive = index < activeBlocksCount;
           return (
@@ -88,7 +88,7 @@ export default function StatProgressBar({
               className={`h-full flex-1 rounded-none origin-bottom ${
                 isActive 
                   ? `${currentTheme.barBg} ${currentTheme.glow}` 
-                  : "bg-zinc-900"
+                  : "bg-background"
               }`}
             />
           );

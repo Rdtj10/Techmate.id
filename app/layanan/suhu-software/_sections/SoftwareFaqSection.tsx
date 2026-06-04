@@ -27,22 +27,22 @@ const faqItems = [
 
 export default function SoftwareFaqSection() {
   return (
-    <section className="relative w-full py-16 bg-zinc-950 border-t-2 border-zinc-900 overflow-hidden text-white">
+    <section className="relative w-full py-16 bg-card border-t-2 border-border overflow-hidden text-foreground transition-colors duration-300">
       <div className="container mx-auto max-w-4xl px-4">
-        {/* Header */}
+        
         <div className="flex flex-col items-center mb-12 text-center">
           <span className="px-2.5 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-[8px] md:text-[9px] font-[family-name:var(--font-press-start-2p)] tracking-widest uppercase mb-4">
             HELP CENTER
           </span>
-          <h2 className="text-xl md:text-3xl font-[family-name:var(--font-press-start-2p)] font-bold tracking-wide text-white mb-4">
+          <h2 className="text-xl md:text-3xl font-[family-name:var(--font-press-start-2p)] font-bold tracking-wide text-foreground mb-4">
             FAQ SIHIR SOFTWARE
           </h2>
-          <p className="max-w-2xl text-xs md:text-sm text-zinc-400 font-sans leading-relaxed">
+          <p className="max-w-2xl text-xs md:text-sm text-muted-foreground font-sans leading-relaxed">
             Punya pertanyaan seputar cara kerja sihir kodingan kita? Baca dulu rangkuman tanya-jawab di bawah ini ya!
           </p>
         </div>
 
-        {/* Accordion FAQ */}
+        
         <div className="max-w-3xl mx-auto mt-4">
           <FaqAccordion items={faqItems} colorTheme="green" />
         </div>

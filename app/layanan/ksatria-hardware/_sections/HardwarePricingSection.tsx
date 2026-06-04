@@ -64,22 +64,22 @@ const packages = [
 
 export default function HardwarePricingSection() {
   return (
-    <section className="relative w-full py-16 bg-black overflow-hidden text-white">
+    <section className="relative w-full py-16 bg-background overflow-hidden text-foreground">
       <div className="container mx-auto max-w-5xl px-4">
-        {/* Header */}
+        
         <div className="flex flex-col items-center mb-12 text-center">
           <span className="px-2.5 py-1 bg-blue-500/10 border border-blue-500/30 text-blue-400 text-[8px] md:text-[9px] font-[family-name:var(--font-press-start-2p)] tracking-widest uppercase mb-4">
             ITEM SHOP
           </span>
-          <h2 className="text-xl md:text-3xl font-[family-name:var(--font-press-start-2p)] font-bold tracking-wide text-white mb-4">
+          <h2 className="text-xl md:text-3xl font-[family-name:var(--font-press-start-2p)] font-bold tracking-wide text-foreground mb-4">
             PAKET KESATRIAN HARDWARE
           </h2>
-          <p className="max-w-2xl text-xs md:text-sm text-zinc-400 font-sans leading-relaxed">
+          <p className="max-w-2xl text-xs md:text-sm text-muted-foreground font-sans leading-relaxed">
             Harganya bersahabat dan transparan. Lo bisa bawa sparepart sendiri untuk dipasang, atau kita bantu cariin dengan harga termurah di pasaran.
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4 items-stretch">
           {packages.map((pkg, i) => (
             <PricingCard key={i} {...pkg} />

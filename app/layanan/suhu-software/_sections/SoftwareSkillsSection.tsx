@@ -97,28 +97,28 @@ const softwarePaths: SkillPath[] = [
 
 export default function SoftwareSkillsSection() {
   return (
-    <section className="relative w-full py-16 bg-zinc-950 border-t-2 border-b-2 border-zinc-900 overflow-hidden text-white">
-      {/* Title */}
+    <section className="relative w-full py-16 bg-card border-t-2 border-b-2 border-border overflow-hidden text-foreground transition-colors duration-300">
+      
       <div className="container mx-auto max-w-5xl px-4 flex flex-col items-center mb-12 text-center">
         <span className="px-2.5 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-[8px] md:text-[9px] font-[family-name:var(--font-press-start-2p)] tracking-widest uppercase mb-4">
           SPELL & SKILLS
         </span>
-        <h2 className="text-xl md:text-3xl font-[family-name:var(--font-press-start-2p)] font-bold tracking-wide text-white mb-4">
+        <h2 className="text-xl md:text-3xl font-[family-name:var(--font-press-start-2p)] font-bold tracking-wide text-foreground mb-4">
           POHON SIHIR SOFTWARE
         </h2>
-        <p className="max-w-2xl text-xs md:text-sm text-zinc-400 font-sans leading-relaxed">
+        <p className="max-w-2xl text-xs md:text-sm text-muted-foreground font-sans leading-relaxed">
           Hover node skill di bawah buat intip deskripsi lengkapnya. Kita terus leveling up skill-tree ini biar software yang kita bikin selalu pake teknologi paling termutakhir!
         </p>
       </div>
 
-      {/* Skill Tree wrapper */}
+      
       <div className="container mx-auto max-w-5xl px-4">
-        <div className="p-6 md:p-8 bg-black border-4 border-zinc-800 rounded-none relative">
-          {/* Pixel corners */}
-          <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-black z-20" />
-          <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-black z-20" />
-          <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-black z-20" />
-          <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-black z-20" />
+        <div className="p-6 md:p-8 bg-background border-4 border-border rounded-none relative">
+          
+          <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-background z-20" />
+          <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-background z-20" />
+          <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-background z-20" />
+          <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-background z-20" />
 
           <SkillTree paths={softwarePaths} colorTheme="green" />
         </div>

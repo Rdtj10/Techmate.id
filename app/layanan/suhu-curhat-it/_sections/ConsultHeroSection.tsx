@@ -5,8 +5,8 @@ import DialogueBox from "@/app/_components/DialogueBox";
 
 export default function ConsultHeroSection() {
   return (
-    <section className="relative w-full pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-black text-white">
-      {/* Grid Pattern Background */}
+    <section className="relative w-full pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-background text-foreground">
+      
       <div
         className="absolute inset-0 z-0 opacity-15 pointer-events-none"
         style={{
@@ -17,9 +17,9 @@ export default function ConsultHeroSection() {
       />
 
       <div className="container relative z-10 mx-auto max-w-5xl px-4">
-        {/* Breadcrumb / Level Info */}
+        
         <div className="flex flex-wrap justify-between items-center gap-3 mb-8">
-          <div className="flex items-center gap-2 font-[family-name:var(--font-press-start-2p)] text-[8px] md:text-[9px] text-zinc-500">
+          <div className="flex items-center gap-2 font-[family-name:var(--font-press-start-2p)] text-[8px] md:text-[9px] text-muted-foreground">
             <span>LAYANAN</span>
             <span>&gt;</span>
             <span className="text-amber-400">SUHU-CURHAT-IT</span>
@@ -30,7 +30,7 @@ export default function ConsultHeroSection() {
           </div>
         </div>
 
-        {/* Title and Intro */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             <h1
@@ -39,36 +39,36 @@ export default function ConsultHeroSection() {
             >
               SUHU CURHAT IT
             </h1>
-            <p className="text-zinc-400 text-base md:text-lg mb-8 leading-relaxed font-sans">
+            <p className="text-muted-foreground text-base md:text-lg mb-8 leading-relaxed font-sans">
               Bingung milih server cloud yang murah tapi aman? Mau migrasi data kantor tapi takut hilang? Atau butuh nanya-nanya seputar tren teknologi terbaru langsung ke praktisi berpengalaman? Sini curhatin semuanya, kami kasih solusi paling masuk akal!
             </p>
             <div className="flex flex-wrap gap-4 font-[family-name:var(--font-press-start-2p)] text-[8px] md:text-[9px]">
-              <span className="px-3 py-2 bg-zinc-900 border-2 border-zinc-800 text-zinc-300">
+              <span className="px-3 py-2 bg-background border-2 border-border text-muted-foreground">
                 💬 1-ON-1 CHAT
               </span>
-              <span className="px-3 py-2 bg-zinc-900 border-2 border-zinc-800 text-zinc-300">
+              <span className="px-3 py-2 bg-background border-2 border-border text-muted-foreground">
                 ☁️ CLOUD STRATEGY
               </span>
-              <span className="px-3 py-2 bg-zinc-900 border-2 border-zinc-800 text-zinc-300">
+              <span className="px-3 py-2 bg-background border-2 border-border text-muted-foreground">
                 🛡️ SECURITY AUDIT
               </span>
             </div>
           </div>
 
-          {/* Consultation Chat Mockup */}
+          
           <div className="lg:col-span-5 relative w-full">
-            <div className="w-full bg-zinc-950 border-4 border-zinc-800 p-4 relative font-mono text-xs text-zinc-400 shadow-[8px_8px_0_0_rgba(255,255,255,0.03)]">
-              {/* Pixel corners */}
-              <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-black z-10" />
-              <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-black z-10" />
-              <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-black z-10" />
-              <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-black z-10" />
+            <div className="w-full bg-card border-4 border-border p-4 relative font-mono text-xs text-muted-foreground shadow-[8px_8px_0_0_rgba(255,255,255,0.03)]">
+              
+              <div className="absolute top-[-4px] left-[-4px] w-2 h-2 bg-background z-10" />
+              <div className="absolute top-[-4px] right-[-4px] w-2 h-2 bg-background z-10" />
+              <div className="absolute bottom-[-4px] left-[-4px] w-2 h-2 bg-background z-10" />
+              <div className="absolute bottom-[-4px] right-[-4px] w-2 h-2 bg-background z-10" />
 
-              {/* Terminal Title Bar */}
-              <div className="flex items-center justify-between border-b border-zinc-800 pb-2.5 mb-4">
+              
+              <div className="flex items-center justify-between border-b border-border pb-2.5 mb-4">
                 <div className="flex items-center gap-1.5">
                   <MessagesSquare className="size-3.5 text-amber-400" />
-                  <span className="text-[9px] font-[family-name:var(--font-press-start-2p)] text-zinc-500 tracking-wider">
+                  <span className="text-[9px] font-[family-name:var(--font-press-start-2p)] text-muted-foreground tracking-wider">
                     curhat_session.log
                   </span>
                 </div>
@@ -79,11 +79,11 @@ export default function ConsultHeroSection() {
                 </div>
               </div>
 
-              {/* Chat Simulation */}
+              
               <div className="space-y-3.5 text-[11px] leading-relaxed">
                 <div>
-                  <p className="text-zinc-500 font-bold">[CLIENT] 23:45</p>
-                  <p className="text-zinc-300">Suhu, startup saya mau launching, enakan pake hosting gratisan atau lgsg sewa VPS AWS biar ga jebol pas traffic rame ya?</p>
+                  <p className="text-muted-foreground font-bold">[CLIENT] 23:45</p>
+                  <p className="text-muted-foreground">Suhu, startup saya mau launching, enakan pake hosting gratisan atau lgsg sewa VPS AWS biar ga jebol pas traffic rame ya?</p>
                 </div>
                 <div>
                   <p className="text-amber-400 font-bold">[SUHU CURHAT IT] 23:46</p>
@@ -97,7 +97,7 @@ export default function ConsultHeroSection() {
           </div>
         </div>
 
-        {/* Dialogue Box Section */}
+        
         <div className="mt-8">
           <DialogueBox
             speakerName="SUHU CURHAT IT"

@@ -32,19 +32,17 @@ export default function PartySection() {
   ];
 
   return (
-    <section className="relative w-full py-20 px-4 bg-black text-white overflow-hidden border-t border-zinc-900">
-      {/* Retro scanlines */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-5 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_4px,6px_100%]" />
+    <section className="relative w-full py-20 px-4 bg-background/70 backdrop-blur-sm text-foreground overflow-hidden border-t border-border transition-colors duration-300">
 
       <div className="container relative z-10 mx-auto max-w-4xl">
         
-        {/* Section Header */}
+        
         <div className="flex flex-col items-center text-center mb-20">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="px-3 py-1 bg-zinc-900 border-2 border-zinc-800 text-zinc-400 text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)]"
+            className="px-3 py-1 bg-card border-2 border-border text-muted-foreground text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-none mb-4 inline-block font-[family-name:var(--font-press-start-2p)] transition-colors duration-300"
           >
             Level 5: Kata Temen Mabar
           </motion.span>
@@ -54,7 +52,7 @@ export default function PartySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-2xl md:text-4xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-white mb-6 uppercase tracking-wide"
+            className="text-2xl md:text-4xl font-bold font-[family-name:var(--font-press-start-2p)] leading-tight text-foreground mb-6 uppercase tracking-wide"
           >
             KATA TONGKRONGAN (TESTIMONI)
           </motion.h2>
@@ -64,13 +62,13 @@ export default function PartySection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="max-w-2xl text-sm md:text-base text-zinc-400"
+            className="max-w-2xl text-sm md:text-base text-muted-foreground"
           >
             Nih kata temen-temen mabar (klien) kami setelah beresin misi teknologi bareng squad Techmate.
           </motion.p>
         </div>
 
-        {/* Stack of DialogueBoxes */}
+        
         <div className="flex flex-col gap-12">
           {reviews.map((review, index) => (
             <motion.div
